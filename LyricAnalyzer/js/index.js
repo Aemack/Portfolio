@@ -2,9 +2,13 @@ function hide_buttons(){
     button1 = document.getElementById("btn1");
     button2 = document.getElementById("btn2");
     button3 = document.getElementById("btn3");
+    button4 = document.getElementById("btn4");
+    button5 = document.getElementById("btn5");
     button1.style.visibility = "hidden";
     button2.style.visibility = "hidden";
     button3.style.visibility = "hidden";
+    button4.style.visibility = "hidden";
+    button5.style.visibility = "hidden";
 
 }
 
@@ -38,9 +42,13 @@ function reqListener() {
         button1 = document.getElementById("btn1");
         button2 = document.getElementById("btn2");
         button3 = document.getElementById("btn3");
+        button4 = document.getElementById("btn4");
+        button5 = document.getElementById("btn5");
         button1.style.visibility = "visible";
         button2.style.visibility = "visible";
         button3.style.visibility = "visible";
+        button4.style.visibility = "visible";
+        button5.style.visibility = "visible";
         }
     }
 
@@ -134,6 +142,28 @@ function most_used_word(){
     return mostUsed;
 }
 
+function longest_word(){
+    longestWord = " "
+    wordList = get_words();
+    console.log(wordList)
+    wordList.forEach(function (word){
+        if(word.length > longestWord.length){
+            longestWord = word;
+            console.log(word)
+        }
+    })
+    return longestWord;
+}
+
+function average_word_length(){
+    total = 0;
+    words = get_words();
+    words.forEach(function(word){
+        total = total+word.length;
+    })
+    return Math.floor(total/words.length);
+}
+
 function display_lyrics(){
     clear_page()
     artist = document.getElementById("artist").value;
@@ -184,4 +214,24 @@ function print_most_used_word(){
     mostUsedElement.setAttribute("class", "subList");
     mostUsedElement.innerHTML = "Most used word: "+ mostUsedWord + " - "+ wordOccurence;
     outputList.appendChild(mostUsedElement)
+}
+
+function print_longest_word(){
+    clear_page();
+    longestWord = longest_word();    
+    longestWordElement = document.createElement("li");
+    longestWordElement.setAttribute("class", "subList");
+    longestWordElement.innerHTML = "Longest Word: "+ longestWord + " - "+ longestWord.length;
+    outputList.appendChild(longestWordElement)
+}
+
+
+function print_average_word_length(){
+    clear_page();
+    averageWordLength = average_word_length();
+    averageLengthElement = document.createElement("li");
+    averageLengthElement.setAttribute("class","subList");
+    averageLengthElement.innerHTML = "Average word length: "+averageWordLength+" characters.";
+    outputList.appendChild(averageLengthElement);
+
 }

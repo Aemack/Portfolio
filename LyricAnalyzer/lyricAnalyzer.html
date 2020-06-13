@@ -22,7 +22,7 @@
     <h2 id="title" class="title">Lyric Analyzer</h2>
     <h5 id="subtitle" class="subtitle">by Adam</h5>
   </header>
-
+<div id="main">
   <form name="lyricInput">
     <input id="artist" class="searchbar" placeholder="Artist" type="text"></input>
     <input id="track" class="searchbar" placeholder="Track" type="text"></input>
@@ -31,6 +31,8 @@
       <button type="button" onclick="unique_word_count()" id="btn1" class="btn1">Unique Word Count</button>
       <button type="button" onclick="unique_word_list()" id="btn2" class="btn2">Unique Word List</button>
       <button type="button" onclick="print_most_used_word()" id="btn3" class="btn3">Most Used Word</button>
+      <button type="button" onclick="print_longest_word()" id="btn4" class="btn4">Longest Word</button>
+      <button type="button" onclick="print_average_word_length()" id="btn5" class="btn5">Average Word Length</button>
     </div>
   </form>
 
@@ -44,7 +46,7 @@
   <p id="lyrics"></p>
 
 </div>
-
+</div>
   <script src="js/index.js"></script>
   
   

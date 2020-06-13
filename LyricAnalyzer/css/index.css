@@ -5,10 +5,13 @@
 }
 
 * {
-    max-width: 500px;
+    /*max-width: 600px;*/
     margin: auto;
 }
 
+#main{
+    max-width:600px
+}
 /*Custom Properties*/
 :root {
     --ff-primary: 'Spource Sans Pro', sans-serif;
@@ -17,9 +20,11 @@
     --fw-reg: 200;
     --fw-bold: 900;
 
-    --clr-light: #fff;
-    --clr-dark: #303030;
-    --clr-accent: #86bbd8;
+    --clr-light: #ffffff;
+    --clr-dark: #000000;
+    --clr-light-accent: #ffc857;
+    --clr-dark-accent: #2e4052; 
+
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -30,28 +35,29 @@
 }
 
 .title{
-    background:#9097C0;
+    background:var(--clr-dark-accent);
     color:var(--clr-light);
-    width: 100%
+    width: 50%;
+    text-align: center;
+    
+}
+
+.subtitle {
+    background:var(--clr-light-accent) ;
+    color:var(--clr-dark);
+    width:80%;
+    text-align: center;
 }
 
 button{
-    background:#9097C0;
+    background: var(--clr-light-accent);
     color:var(--clr-light);
 }
 
 button:hover {
-    background: #A7BBEC;
+    background: var(--clr-dark-accent);
 }
 
-#btn3 {
-    display: inline;
-}
-
-.subtitle {
-    background:#A7BBEC;
-    width: 80%
-}
 
 .input{
     justify-content: center;
@@ -66,14 +72,16 @@ button:hover {
 }
 
 #output {
-    color: antiquewhite;
-    background: #A7BBEC;
+    color: var(--clr-light);
+    background: var(--clr-light-accent);
 }
 
 
 #outputList{
     max-width: 1000px;
     margin: auto;
+    color: var(--clr-light);
+    background: var(--clr-dark-accent);
 }
 
 ul {
@@ -83,9 +91,19 @@ ul {
 ul ul{
     columns: 2;
 }
-#btn1, #btn2, #btn3 {
+
+.optionButtons{
+    display: grid;
+}
+#btn1, #btn2, #btn3, #btn4, #btn5 {
     visibility: hidden;
 }
+
+#lyrics {
+    background: var(--clr-light);
+    color: var(--clr-dark-accent);
+}
+
 
 @media(min-width:700px){
     ul ul {
