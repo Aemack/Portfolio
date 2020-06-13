@@ -56,7 +56,7 @@ function get_lyrics(artist, track){
 function get_words(){
     var lyrics = document.getElementById("lyrics").innerHTML;
     if (lyrics){
-        return split_string(lyrics);
+        return split_string(lyrics.toLowerCase());
     } else {
         return "Cannot find lyrics"
     }
