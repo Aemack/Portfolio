@@ -12,13 +12,23 @@ function reqListener() {
 
     } else {
         var data = JSON.parse(this.responseText);
-        console.log(data.result.track.text);
-        lyricBlock = document.getElementById("lyrics")
-        lyricBlock.innerHTML = data.result.track.text
-        button1 = document.getElementById("btn1");
-        button2 = document.getElementById("btn2");
-        button1.style.visibility = "visible";
-        button2.style.visibility = "visible"
+            if(data.result == undefined){
+                console.log("Hello world")
+                lyricBlock = document.getElementById("lyrics")
+                lyricBlock.innerHTML = "Could not locate lyrics!"
+                
+                button1 = document.getElementById("btn1");
+                button2 = document.getElementById("btn2");
+                button1.style.visibility = "hidden";
+                button2.style.visibility = "hidden"
+            } else {
+            lyricBlock = document.getElementById("lyrics")
+            lyricBlock.innerHTML = data.result.track.text
+            button1 = document.getElementById("btn1");
+            button2 = document.getElementById("btn2");
+            button1.style.visibility = "visible";
+            button2.style.visibility = "visible"
+        }
     }
 
 }
