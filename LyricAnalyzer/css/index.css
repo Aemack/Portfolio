@@ -79,7 +79,7 @@ ul {
 ul ul{
     columns: 2;
 }
-#btn1, #btn2 {
+#btn1, #btn2, #btn3 {
     visibility: hidden;
 }
 

@@ -10,9 +10,8 @@
 
   
   <link rel="stylesheet" href="css/normalize.css">
-  <!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
-  <link rel="stylesheet" href="css/skeleton.css"> 
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/index.css"> 
 
   <link rel="icon" type="image/png" href="images/favicon.png">
 
@@ -27,9 +26,12 @@
   <form name="lyricInput">
     <input id="artist" class="searchbar" placeholder="Artist" type="text"></input>
     <input id="track" class="searchbar" placeholder="Track" type="text"></input>
-    <button type="button" onclick="display_lyrics()" id="btn3" class="btn3">Search Lyrics</button><br>
-    <button type="button" onclick="unique_word_count()" id="btn1" class="btn1">Unique Word Count</button>
-    <button type="button" onclick="unique_word_list()" id="btn2" class="btn2">Unique Word List</button>
+    <button type="button" onclick="display_lyrics()" id="searchButton" class="searchbar">Search Lyrics</button><br>
+    <div class="optionButtons">
+      <button type="button" onclick="unique_word_count()" id="btn1" class="btn1">Unique Word Count</button>
+      <button type="button" onclick="unique_word_list()" id="btn2" class="btn2">Unique Word List</button>
+      <button type="button" onclick="print_most_used_word()" id="btn3" class="btn3">Most Used Word</button>
+    </div>
   </form>
 
 <div id="output">
