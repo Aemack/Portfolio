@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    max-width: 500px;
+    margin: auto;
+}
+
+/*Custom Properties*/
+:root {
+    --ff-primary: 'Spource Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 200;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #86bbd8;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.15rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
+}
+
+.title{
+    background:#9097C0;
+    color:var(--clr-light);
+    width: 100%
+}
+
+button{
+    background:#9097C0;
+    color:var(--clr-light);
+}
+
+button:hover {
+    background: #A7BBEC;
+}
+
+#btn3 {
+    display: inline;
+}
+
+.subtitle {
+    background:#A7BBEC;
+    width: 80%
+}
+
+.input{
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+}
+
+#lyrics{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+}
+
+}
+
+#outputList{
+    max-width: 1000px;
+    margin: auto;
+}
+
+ul {
+    padding-left: 10px;
+}
+
+ul ul{
+    columns: 2;
+}
+#btn1, #btn2 {
+    visibility: hidden;
+}
+
+@media(min-width:700px){
+    ul ul {
+        columns: 3;
+        
+    }
+}
+
+@media(min-width:900px){
+    ul ul {
+        columns: 4;
+        
+    }
+}
