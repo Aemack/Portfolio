@@ -28,7 +28,12 @@ function reqListener() {
                 console.log("Hello world")
                 cant_find_song();
             } else {
-            lyricBlock = document.getElementById("lyrics")
+            lyricBlock = document.getElementById("lyrics");
+            artistBlock = document.getElementById("subtitle");
+            trackBlock = document.getElementById("title")
+            console.log(data.result.track.name)
+            artistBlock.innerHTML = "By "+data.result.artist.name
+            trackBlock.innerHTML = data.result.track.name 
             lyricBlock.innerHTML = data.result.track.text
         button1 = document.getElementById("btn1");
         button2 = document.getElementById("btn2");

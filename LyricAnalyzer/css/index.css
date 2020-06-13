@@ -65,7 +65,11 @@ button:hover {
     padding: 10px;
 }
 
+#output {
+    color: antiquewhite;
+    background: #A7BBEC;
 }
+
 
 #outputList{
     max-width: 1000px;
