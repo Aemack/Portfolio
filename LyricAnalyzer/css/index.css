@@ -35,6 +35,7 @@
 }
 
 .title{
+    margin-top: 10px;
     background:var(--clr-dark-accent);
     color:var(--clr-light);
     width: 50%;
@@ -56,6 +57,7 @@ button{
 
 button:hover {
     background: var(--clr-dark-accent);
+    color: var(--clr-light-accent)
 }
 
 

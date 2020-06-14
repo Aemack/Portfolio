@@ -1,0 +1,12 @@
+#title {
+    text-align: center;
+    background: #000000;
+    color: yellow;
+    margin:0
+}
+
+#quote {
+    width:100%;
+    float: right;
+    text-align: right;
+}
