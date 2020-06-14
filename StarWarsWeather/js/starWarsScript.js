@@ -1,5 +1,4 @@
 apiKey = "c0a8cf4628667898c6a3d913189f3596";
-apiUrl = "api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={your api key}"
 lat = 0;
 long = 0;
 
