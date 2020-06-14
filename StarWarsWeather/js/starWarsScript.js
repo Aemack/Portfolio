@@ -26,7 +26,7 @@ function onError(error){
 
 
 function get_Weather( lat,long ) {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}`)  
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}`)  
     .then(function(resp) { return resp.json() }) // Convert data to json
     .then(function(data) {
 
