@@ -91,7 +91,7 @@ function change_background(){
 
 function displayWeather(weather) {
     weatherElement = document.getElementById("weather");
-    weatherElement.innerHTML = "Rain"//weather;
+    weatherElement.innerHTML = weather;
 }
 
 window.onload = function() {
