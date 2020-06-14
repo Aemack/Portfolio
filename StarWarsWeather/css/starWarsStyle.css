@@ -7,10 +7,11 @@
 
 #quote {
     width:100%;
-    float: right;
-    text-align: right;
+    text-align: end;
 }
-
+#weather{
+    visibility: hidden;
+}
 #main {
     color: #fff;
 }

@@ -51,7 +51,7 @@ function displayLocation(location){
 function displayTemp(temp){
     celcius = Math.floor(temp - 273.15);
     locationElement = document.getElementById("temp");
-    locationElement.innerHTML = celcius+" degrees celcius";
+    locationElement.innerHTML = celcius+"c";
 }
 
 function change_background(){
