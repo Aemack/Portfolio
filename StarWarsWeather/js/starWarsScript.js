@@ -73,7 +73,7 @@ function change_background(){
             document.getElementById("quote").innerHTML = "It's as cold as Hoth"
             break;
         case("Rain"):
-            document.getElementById("planetPicture").src="img/kamino.jpeg"
+            document.getElementById("planetPicture").src="img/kamino.jpg"
             document.getElementById("quote").innerHTML = "It's as wet as Kamino"
             break;
         case("Thunderstorm"):
@@ -91,7 +91,7 @@ function change_background(){
 
 function displayWeather(weather) {
     weatherElement = document.getElementById("weather");
-    weatherElement.innerHTML = weather;
+    weatherElement.innerHTML = "Rain"//weather;
 }
 
 window.onload = function() {
