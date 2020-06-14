@@ -1,4 +1,15 @@
+@font-face {
+    font-family:"STARWARS";
+    src:url("font/STARWARS.eot?") format("eot"),
+    url("font/STARWARS.woff") format("woff"),
+    url("font/STARWARS.ttf") format("truetype"),
+    url("font/STARWARS.svg#STARWARS") format("svg");
+    font-weight:normal;
+    font-style:normal;}
+
+
 #title {
+    font-family:'STARWARS'; 
     text-align: center;
     background: #000000;
     color: yellow;

@@ -80,6 +80,10 @@ function change_background(){
             document.getElementById("planetPicture").src="img/lightning.jpeg"
             document.getElementById("quote").innerHTML = "It's thunder and force lightning out there!"
             break;
+        case("Mist"):
+            document.getElementById("planetPicture").src="img/bespin.jpg"
+            document.getElementById("quote").innerHTML = "It's as misty as Bespin out there!"
+            break;
         default:
             document.getElementById("planetPicture").src="img/deathStar.jpeg"
             
