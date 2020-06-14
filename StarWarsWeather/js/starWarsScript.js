@@ -63,6 +63,7 @@ function change_background(){
         case("Clouds"):
             document.getElementById("planetPicture").src="img/bespin.jpeg"
             document.getElementById("quote").innerHTML = "It's as cloudy as Cloud City"
+            document.getElementById("main").style.color="black"
             break;
         case("Clear"):
             document.getElementById("planetPicture").src="img/tatooine.jpeg"
