@@ -1,17 +1,17 @@
 
 @font-face {
     font-family:"STARWARS";
-    src:url("font/STARWARS.eot?") format("eot"),
-    url("font/STARWARS.woff") format("woff"),
-    url("font/STARWARS.ttf") format("truetype"),
-    url("font/STARWARS.svg#STARWARS") format("svg");
+    src:url("STARWARS.eot?") format("eot"),
+    url("STARWARS.woff") format("woff"),
+    url("STARWARS.ttf") format("truetype"),
+    url("STARWARS.svg#STARWARS") format("svg");
     font-weight:normal;
     font-style:normal;
 }
 
 
 #title {
-    font-family:'STARWARS'; 
+    font-family:"STARWARS";
     text-align: center;
     background: #000000;
     color: yellow;
@@ -21,6 +21,7 @@
 #quote {
     width:100%;
     text-align: end;
+    font-family: "STARWARS";
 }
 #weather{
     visibility: hidden;
