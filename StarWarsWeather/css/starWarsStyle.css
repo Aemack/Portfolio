@@ -9,9 +9,13 @@
     font-style:normal;
 }
 
+img {
+    width:100%
+}
 
 #title {
     font-family:"STARWARS";
+    font-style: oblique;
     text-align: center;
     background: #000000;
     color: yellow;

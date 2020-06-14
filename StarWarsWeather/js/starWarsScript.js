@@ -61,7 +61,7 @@ function change_background(){
     document.getElementById("main").style.position='absolute';
     switch (weatherElement.innerHTML){
         case("Clouds"):
-            document.getElementById("planetPicture").src="img/bespin.jpeg"
+            document.getElementById("planetPicture").src="img/bespin.jpg"
             document.getElementById("quote").innerHTML = "It's as cloudy as Cloud City"
             document.getElementById("main").style.color="black"
             break;
@@ -82,8 +82,8 @@ function change_background(){
             document.getElementById("quote").innerHTML = "It's thunder and force lightning out there!"
             break;
         case("Mist"):
-            document.getElementById("planetPicture").src="img/bespin.jpg"
-            document.getElementById("quote").innerHTML = "It's as misty as Bespin out there!"
+            document.getElementById("planetPicture").src="img/dagobah.jpeg"
+            document.getElementById("quote").innerHTML = "It's as misty as Dagobah out there!"
             break;
         default:
             document.getElementById("planetPicture").src="img/deathStar.jpeg"
