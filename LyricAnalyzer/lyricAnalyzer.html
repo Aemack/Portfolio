@@ -24,9 +24,11 @@
   </header>
 <div id="main">
   <form name="lyricInput">
-    <input id="artist" class="searchbar" placeholder="Artist" type="text"></input>
+    <div class="searchbar" id="searchbar">
     <input id="track" class="searchbar" placeholder="Track" type="text"></input>
+    <input id="artist" class="searchbar" placeholder="Artist" type="text"></input>
     <button type="button" onclick="display_lyrics()" id="searchButton" class="searchbar">Search Lyrics</button><br>
+  </div>
     <div class="optionButtons">
       <button type="button" onclick="unique_word_count()" id="btn1" class="btn1">Unique Word Count</button>
       <button type="button" onclick="unique_word_list()" id="btn2" class="btn2">Unique Word List</button>

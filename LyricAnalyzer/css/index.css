@@ -5,7 +5,6 @@
 }
 
 * {
-    /*max-width: 600px;*/
     margin: auto;
 }
 
@@ -61,12 +60,6 @@ button:hover {
 }
 
 
-.input{
-    justify-content: center;
-    margin: auto;
-    width: 100%;
-}
-
 #lyrics{
     position: relative;
     width: 100%;
@@ -107,10 +100,25 @@ ul ul{
 }
 
 
+@media(max-width:600px){
+    
+    #searchButton {
+        display: block;
+        width:80%;
+        margin:auto;
+    }
+
+    #track, #artist {
+        display: block;
+        width:80%;
+        margin:auto;
+    }
+
+}
+
 @media(min-width:700px){
     ul ul {
-        columns: 3;
-        
+        columns: 3;   
     }
 }
 
