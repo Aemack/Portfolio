@@ -1,3 +1,8 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 @font-face {
     font-family:"STARWARS";
@@ -10,7 +15,8 @@
 }
 
 img {
-    width:100%
+    width:100%;
+    height:100%
 }
 
 #title {
