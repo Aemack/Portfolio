@@ -27,6 +27,11 @@ img {
     text-align: end;
     font-family: "STARWARS";
 }
+
+#location, #temp {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 #weather{
     visibility: hidden;
 }

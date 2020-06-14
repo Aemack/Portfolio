@@ -72,6 +72,7 @@ function change_background(){
         case("Snow"):
             document.getElementById("planetPicture").src="img/hoth.jpeg"
             document.getElementById("quote").innerHTML = "It's as cold as Hoth"
+            document.getElementById("main").style.color="black"
             break;
         case("Rain"):
             document.getElementById("planetPicture").src="img/kamino.jpg"
