@@ -18,9 +18,13 @@ function clear_page(){
     clear_ouput();
 }
 
+function capsules_clicked() {
+    clear_page();
+    get_capsule_data();
+}
+
 function rockets_clicked() {
-    clear_options();
-    clear_ouput();
+    clear_page();
     get_rocket_data();
 }
 
@@ -41,6 +45,19 @@ function past_launch_clicked(){
     clear_ouput();
     get_past_launch_data();
 
+}
+
+function get_capsule_data(){
+    fetch(`https://api.spacexdata.com/v4/capsules`)  
+    .then(function(resp) { return resp.json() }) // Convert data to json
+    .then(function(data) {
+        data.forEach(data => {
+            display_capsule_data(data);
+        })
+    })    
+    .catch(function() {
+        // catch any errors
+      });
 }
 
 function get_rocket_data(){
@@ -146,10 +163,6 @@ function display_rocket_data(data){
     descriptionElement.setAttribute("class","output");
     descriptionElement.innerHTML = data.description;
 
-    imageElement = document.createElement("img");
-    imageElement.setAttribute("id", `${data.name}_image`);
-    imageElement.setAttribute("class","output");
-    imageElement.setAttribute("src",`${data.flickr_images[0]}`);
     
 
     console.log(data)
@@ -159,14 +172,37 @@ function display_rocket_data(data){
 
 }
 
+function display_capsule_data(data){
+    outputList = document.getElementById("output");
+
+    nameElement = document.createElement("h3");
+    nameElement.setAttribute("id", "rocketTitle")
+    nameElement.setAttribute("class", "output")
+    nameElement.innerHTML = "Serial: "+data.serial;
+
+    firstFlightElement =document.createElement("h5");
+    firstFlightElement.setAttribute("id","rocketfirstFlight");
+    firstFlightElement.setAttribute("class","output");
+    firstFlightElement.innerHTML = `Status: ${data.status}`;
+
+    descriptionElement = document.createElement("p");
+    descriptionElement.setAttribute("id","rocketDescription");
+    descriptionElement.setAttribute("class","output");
+    descriptionElement.innerHTML = data.last_update;
+
+
+
+    console.log(data)
+    outputList.appendChild(nameElement)
+    outputList.appendChild(firstFlightElement)
+    outputList.appendChild(descriptionElement)
+
+
+}
+
 function launches_clicked(){
-    clear_options()
-    clear_ouput()
-    /*subMenu = document.getElementById("subMenu")
-    subList = document.createElement("ul")*/
+    clear_page()
     subList = document.getElementById("subMenu")
-    /*subList.setAttribute("id", "subList")
-    subMenu.appendChild(subList);*/
 
     latestElement = document.createElement("button")
     latestElement.setAttribute("onclick","latest_launch_clicked()")
