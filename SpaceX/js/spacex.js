@@ -224,9 +224,11 @@ function launches_clicked(){
     subList.appendChild(pastElement)
 }
 
-window.onload(function() {
+window.onload = function() {
     outputElement = document.getElementById("output")
-    welcome = document.createElement("h3")
-    welcome.innerHTML = "Welcome to the Unofficial SpaceX Tracking Website" 
+    console.log("helo")
+    welcome = document.createElement("iframe")
+    welcome.setAttribute("src","https://www.youtube.com/embed/mhrkdHshb3E")
+    welcome.setAttribute("class","output")
     outputElement.appendChild(welcome);
-});
+};
