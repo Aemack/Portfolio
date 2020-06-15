@@ -1,34 +1,58 @@
 * {
     margin: auto;
-    align-items: center;
-    max-width:800px;
 }
 
-ul  {
+
+/*Custom Properties*/
+:root {
+    --ff-primary: 'Spource Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 400;
+    --fw-bold: 900;
+
+    --clr-light: #ffffff;
+    --clr-dark: #000000;
+    --clr-light-accent: #ffc857;
+    --clr-dark-accent: #2e4052; 
+
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.15rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
+}
+
+#spacex {
+    background: var(--clr-dark);
+    color: var(--clr-light);
+}
+
+#main-menu {
     display: flex;
 }
-li {
-    margin: 5px;
+
+#subList {
+    justify-self: center;
+    max-width: 80%;
+    display: block;
+    width: 80%;
+}
+
+li{
     list-style-type: none;
 }
 
-button {
-    display: flex;
-    margin: auto;
-    
+h4 {
+    width: 90%;
+    background: var(--clr-dark-accent);
+    color: var(--clr-light);
 }
 
-#spacex{
-    background:#000;
-    color:#fff
-}
-
-iframe{
-    display: block;
-}
-
-p,
-h4{
-    display: block;
-    text-align: center;    
+h5 {
+    width: 80%;
+    background: var(--clr-light-accent);
+    color:var(--clr-dark)
 }

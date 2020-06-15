@@ -164,14 +164,17 @@ function launches_clicked(){
 
     latestElement = document.createElement("button")
     latestElement.setAttribute("onclick","latest_launch_clicked()")
+    latestElement.setAttribute("class","optionButton")
     latestElement.innerHTML = "Latest"
 
     upcomingElement = document.createElement("button")
     upcomingElement.setAttribute("onclick","upcoming_launch_clicked()")
+    upcomingElement.setAttribute("class","optionButton")
     upcomingElement.innerHTML = "Upcoming"
 
     pastElement = document.createElement("button")
     pastElement.setAttribute("onclick","past_launch_clicked()")
+    pastElement.setAttribute("class","optionButton")
     pastElement.innerHTML = "Past Launches"
     
     subList.appendChild(latestElement)
