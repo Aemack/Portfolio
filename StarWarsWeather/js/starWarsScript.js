@@ -70,12 +70,12 @@ function change_background(){
             document.getElementById("quote").innerHTML = "It's as clear as Tatooine"
             break;
         case("Snow"):
-            document.getElementById("planetPicture").src="img/hoth.jpeg"
+            document.getElementById("planetPicture").src="img/hoth.jpg"
             document.getElementById("quote").innerHTML = "It's as cold as Hoth"
             document.getElementById("main").style.color="black"
             break;
         case("Rain"):
-            document.getElementById("planetPicture").src="img/kamino.jpg"
+            document.getElementById("planetPicture").src="img/kamino.jpeg"
             document.getElementById("quote").innerHTML = "It's as wet as Kamino"
             break;
         case("Thunderstorm"):
@@ -85,6 +85,10 @@ function change_background(){
         case("Mist"):
             document.getElementById("planetPicture").src="img/dagobah.jpeg"
             document.getElementById("quote").innerHTML = "It's as misty as Dagobah out there!"
+            break;
+        case("Fog"):
+            document.getElementById("planetPicture").src="img/dagobah.jpeg"
+            document.getElementById("quote").innerHTML = "It's as foggy as Dagobah out there!"
             break;
         default:
             document.getElementById("planetPicture").src="img/deathStar.jpeg"
@@ -97,7 +101,7 @@ function change_background(){
 
 function displayWeather(weather) {
     weatherElement = document.getElementById("weather");
-    weatherElement.innerHTML = "Rain"//weather;
+    weatherElement.innerHTML = weather;
 }
 
 window.onload = function() {
