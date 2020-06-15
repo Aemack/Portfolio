@@ -45,7 +45,7 @@ li{
     list-style-type: none;
 }
 
-h4 {
+h4, h3 {
     width: 90%;
     background: var(--clr-dark-accent);
     color: var(--clr-light);

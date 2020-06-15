@@ -131,10 +131,10 @@ function display_rocket_data(data){
     nameElement.setAttribute("class", "output")
     nameElement.innerHTML = data.name;
 
-    typeElement =document.createElement("h5");
-    typeElement.setAttribute("id","rocketType");
-    typeElement.setAttribute("class","output");
-    typeElement.innerHTML = `Type: ${data.type}`;
+    firstFlightElement =document.createElement("h5");
+    firstFlightElement.setAttribute("id","rocketfirstFlight");
+    firstFlightElement.setAttribute("class","output");
+    firstFlightElement.innerHTML = `First Flight: ${data.first_flight}`;
 
     descriptionElement = document.createElement("p");
     descriptionElement.setAttribute("id","rocketDescription");
@@ -149,7 +149,7 @@ function display_rocket_data(data){
 
     console.log(data)
     outputList.appendChild(nameElement)
-    outputList.appendChild(typeElement)
+    outputList.appendChild(firstFlightElement)
     outputList.appendChild(descriptionElement)
 
 }
