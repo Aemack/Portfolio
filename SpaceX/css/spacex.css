@@ -1,7 +1,34 @@
+* {
+    margin: auto;
+    align-items: center;
+    max-width:800px;
+}
+
 ul  {
     display: flex;
 }
 li {
     margin: 5px;
+    list-style-type: none;
 }
 
+button {
+    display: flex;
+    margin: auto;
+    
+}
+
+#spacex{
+    background:#000;
+    color:#fff
+}
+
+iframe{
+    display: block;
+}
+
+p,
+h4{
+    display: block;
+    text-align: center;    
+}
