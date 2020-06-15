@@ -224,3 +224,9 @@ function launches_clicked(){
     subList.appendChild(pastElement)
 }
 
+window.onload(function() {
+    outputElement = document.getElementById("output")
+    welcome = document.createElement("h3")
+    welcome.innerHTML = "Welcome to the Unofficial SpaceX Tracking Website" 
+    outputElement.appendChild(welcome);
+});

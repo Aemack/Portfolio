@@ -26,8 +26,9 @@
 }
 
 #spacex {
-    background: var(--clr-dark);
+    background-image: linear-gradient(var(--clr-dark), var(--clr-dark-accent));;
     color: var(--clr-light);
+    box-shadow: var(--bs);
 }
 
 #main-menu {
@@ -47,12 +48,14 @@ a {
 }
 
 button{
+    transition: all 0.5s ease-in-out;
     background: var(--clr-light-accent);
     color:var(--clr-light);
     width:100%;
 }
 
 button:hover{
+    transform: scale(1.1);
     background: var(--clr-dark-accent);
     color: var(--clr-light-accent);
 }
