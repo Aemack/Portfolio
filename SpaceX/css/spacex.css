@@ -42,6 +42,10 @@
     justify-content: center;
 }
 
+a {
+    text-decoration: none;
+}
+
 button{
     background: var(--clr-light-accent);
     color:var(--clr-light);
