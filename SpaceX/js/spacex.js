@@ -6,11 +6,16 @@ function clear_ouput(){
 }
 
 function clear_options() {
-    outputList = document.getElementById("subMenu").querySelectorAll("#subList")
+    outputList = document.getElementById("subMenu").querySelectorAll(".optionButton")
     outputList.forEach((elem) => {
         elem.remove();
         console.log("hi")
     })
+}
+
+function clear_page(){
+    clear_options();
+    clear_ouput();
 }
 
 function rockets_clicked() {
@@ -144,7 +149,7 @@ function display_rocket_data(data){
     imageElement = document.createElement("img");
     imageElement.setAttribute("id", `${data.name}_image`);
     imageElement.setAttribute("class","output");
-    imageElement.setAttribute("src",`${data.image}`);
+    imageElement.setAttribute("src",`${data.flickr_images[0]}`);
     
 
     console.log(data)
@@ -157,10 +162,11 @@ function display_rocket_data(data){
 function launches_clicked(){
     clear_options()
     clear_ouput()
-    subMenu = document.getElementById("subMenu")
-    subList = document.createElement("ul")
-    subList.setAttribute("id", "subList")
-    subMenu.appendChild(subList);
+    /*subMenu = document.getElementById("subMenu")
+    subList = document.createElement("ul")*/
+    subList = document.getElementById("subMenu")
+    /*subList.setAttribute("id", "subList")
+    subMenu.appendChild(subList);*/
 
     latestElement = document.createElement("button")
     latestElement.setAttribute("onclick","latest_launch_clicked()")

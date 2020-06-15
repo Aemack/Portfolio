@@ -14,10 +14,12 @@
 
 <body>
     <header>
-        <h2 id="spacex">SpaceX</h2>
+        <h2 id="spacex" onclick="clear_page()"><a>SpaceX</a></h2>
         <nav>
             <ul id="main-menu">
                 <li><button id="launches" onclick="launches_clicked()">Launches</button></li>
+              
+                <li><button id="capsules" onclick="capsules_clicked()">Capsules</button></li>
                 <li><button id="rockets" onclick="rockets_clicked()">Rockets</button></li>
             </ul>
             <ul id="subMenu"></ul>
