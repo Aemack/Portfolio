@@ -8,8 +8,9 @@
 
     --clr-light: #ffffff;
     --clr-dark: #000000;
-    --clr-light-accent: #9e2a2b;
-    --clr-dark-accent: #335c67; 
+    --clr-light-accent: #9CC5A1;
+    --clr-mid-accent: #49A078;
+    --clr-dark-accent: #1F2421; 
 
 
     --fs-h1: 3rem;
@@ -20,25 +21,23 @@
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
 }
 
+
 @media(max-width:800px){
     * {
         width:100%
     }
 }
 
-nav {
-    justify-content: space-evenly;
-    margin: auto
-}
 
-header, a {
-    background: var(--clr-dark-accent);
-    color: var(--clr-light);
+header, a, a:visited {
+    background: var(--clr-mid-accent);
+    color: var(--clr-light-accent);
     text-decoration: none;
 }
 
+
 a:visited{
-    color: var(--clr-light);
+    color: var(--clr-light-accent);
 }
 
 
@@ -57,15 +56,22 @@ h3,h5{
 
 
 nav button {
-    background: var(--clr-light-accent);
+    background: var(--clr-dark-accent);
     color: var(--clr-light);
+    display: inline-flex;
+    margin: 5px;
+    
 }
 
 nav button:hover{
-    background: var(--clr-dark);
-    color:var(--clr-light-accent)
+    background: var(--clr-light-accent);
+    color:var(--clr-dark)
 }
 
+nav {
+    background: var(--clr-mid-accent);
+    color: var(--clr-dark);
+}
 
 #nameElement{
     text-align: center;
