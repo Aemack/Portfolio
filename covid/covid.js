@@ -156,7 +156,7 @@ function world_graph (data) {
     })
     
     pieChart = new Chart(myChart, {
-        type:'bar',//'horizontalBar',
+        type:'horizontalBar',
         data:{
             labels:countryLabels,
             datasets:[{
