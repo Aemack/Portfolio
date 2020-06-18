@@ -1,8 +1,9 @@
-
-
 function clear_page(){
     destroy_chart()
+    clear_output()
+}
 
+function clear_output(){
     outputList = document.getElementById("output").querySelectorAll(".output")
     outputList.forEach((elem) => {
         elem.remove();
@@ -17,7 +18,55 @@ function destroy_chart(){
     newChart.setAttribute("id","myChart")
     container.appendChild(newChart)
 }
+
+function search_by_country_clicked(){
+
+    outputList = document.getElementById("navbar").querySelectorAll("#country")
+    outputList.forEach((elem) => {
+        elem.remove();
+    })
+
+    navbar = document.getElementById("navbar")
+    
+    search=document.createElement("input")
+    search.setAttribute("type","text")
+    search.setAttribute("id","country")
+    search.setAttribute("placeholder","Country") 
+
+    searchButton = document.createElement("button")
+    searchButton.setAttribute("onclick","country_clicked()")
+    searchButton.setAttribute("id","country")
+    searchButton.innerHTML= "Search Country"
+
+    navbar.appendChild(search)
+    navbar.appendChild(searchButton)
+}
+
+function country_clicked() {
+    clear_page()
+    country = document.getElementById("country").value;
+    try{
+    fetch(`https://api.covid19api.com/total/country/${country}`)
+    .then(function (resp) { return resp.json()})
+    .then(function (data){
+        console.log(data.err)
+        if(data.message!="Not Found"){
+            display_country_data(data)
+        } else {
+        output = document.getElementById("output")
+        err= document.createElement("h3")
+        err.setAttribute("class","output")
+        err.innerHTML = "Cannot locate country"
+        output.appendChild(err)
+        }
+    })
+} catch(e){
+    console.log(e)
+}
+}
+
 function display_country_data(data){
+
     
     todaysData = data[data.length-1]
     output = document.getElementById("output")
@@ -72,17 +121,6 @@ function display_country_data(data){
         options:{},
     });
     
-}
-
-function country_clicked() {
-    clear_page()
-    country = document.getElementById("country").value;
-    fetch(`https://api.covid19api.com/total/country/${country}`)
-    .then(function (resp) { return resp.json()})
-    .then(function (data){
-        display_country_data(data)
-        }
-    )
 }
 
 function world_graph_clicked(){
