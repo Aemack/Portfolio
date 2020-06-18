@@ -1,3 +1,17 @@
+//Get summary and create element with total global deaths
+window.onload =async function(){
+    fetch(`https://api.covid19api.com/summary`)
+   .then(await function (resp) {return resp.json()} )
+   .then(function (data) { 
+       var totalGlobalDeaths = document.createElement("h4")
+       totalGlobalDeaths.setAttribute("class","output")
+       totalGlobalDeaths.setAttribute("id","totalGlobalDeaths")
+       totalGlobalDeaths.innerHTML = "Total Global Deaths: "+data.Global.TotalDeaths
+       output = document.getElementById("output")
+       output.appendChild(totalGlobalDeaths)
+   })
+}
+
 function clear_page(){
     destroy_chart()
     clear_output()
@@ -11,7 +25,7 @@ function clear_output(){
 }
 
 function clear_navbar() {
-    outputList = document.getElementById("navbar").querySelectorAll(".country")
+    outputList = document.getElementById("navbar").querySelectorAll(".navbar")
     outputList.forEach((elem) => {
         elem.remove();
     })
@@ -35,13 +49,13 @@ function search_by_country_clicked(){
     search=document.createElement("input")
     search.setAttribute("type","text")
     search.setAttribute("id","country")
-    search.setAttribute("class","country")
+    search.setAttribute("class","navbar")
     search.setAttribute("placeholder","Country") 
 
     searchButton = document.createElement("button")
     searchButton.setAttribute("onclick","country_clicked()")
     searchButton.setAttribute("id","countryButton")
-    searchButton.setAttribute("class","country")
+    searchButton.setAttribute("class","navbar")
     searchButton.innerHTML= "Search Country"
 
     navbar.appendChild(search)
@@ -104,6 +118,8 @@ function display_country_data(data){
     date = []
     deaths = []
 
+    console.log(todaysData)
+
     data.forEach(dayData => {
         active.push(dayData.Active)
         date.push(dayData.Date.split("T")[0])
@@ -159,7 +175,6 @@ function world_graph (data) {
         rand2 = Math.floor(Math.random()*255)
         rand3 = Math.floor(Math.random()*255)
         countryColors.push(`rgba(${rand1},${rand2},${rand3})`)
-
     })
     
     pieChart = new Chart(myChart, {
@@ -182,17 +197,81 @@ function world_graph (data) {
 
 }
 
+function by_date_clicked(){
+    clear_page()
+    clear_navbar()
+    navbar = document.getElementById("navbar");
+    create_select()
 
-//Get summary and create element with total global deaths
-window.onload =async function(){
-     fetch(`https://api.covid19api.com/summary`)
-    .then(await function (resp) {return resp.json()} )
-    .then(function (data) { 
-        var totalGlobalDeaths = document.createElement("h4")
-        totalGlobalDeaths.setAttribute("class","output")
-        totalGlobalDeaths.setAttribute("id","totalGlobalDeaths")
-        totalGlobalDeaths.innerHTML = "Total Global Deaths: "+data.Global.TotalDeaths
-        output = document.getElementById("output")
-        output.appendChild(totalGlobalDeaths)
+}
+
+function create_select(){
+    navbar = document.getElementById("navbar")
+    selectCountry = document.createElement("select")
+    selectCountry.setAttribute("name","countries")
+    selectCountry.setAttribute("id","countries")
+    selectCountry.setAttribute("class","navbar")
+    navbar.appendChild(selectCountry)
+    fetch(`https://api.covid19api.com/countries`)
+    .then(function (resp) { return resp.json() })
+    .then(function (data){
+        data.forEach(country=>{
+            newOption = document.createElement("option")
+            newOption.setAttribute("value",country.Country)
+            newOption.setAttribute("class","navbar")
+            newOption.innerHTML = country.Country
+            selectCountry.appendChild(newOption)
+        })
+        return selectCountry.value
+    }).then(data => {create_range(data)})
+}
+
+function create_range(data){
+    fetch(`https://api.covid19api.com/total/dayone/country/${data}`)
+    .then(function(resp) {return resp.json() })
+    .then(function(data) { 
+        name = data[0].Country
+        navbar = document.getElementById("navbar")
+        newRadio = document.createElement("input")
+        newRadio.setAttribute("type","range")
+        newRadio.setAttribute("id","date")
+        newRadio.setAttribute("class","navbar")
+        newRadio.setAttribute("min","0")
+        newRadio.setAttribute("max",data.length-1)
+        newRadio.setAttribute("onchange",`make_day_graph("${name}")`)
+        newRadio.innerHTML = "From Date of first infection" 
+        navbar.appendChild(newRadio)
     })
+}
+
+function make_day_graph(data){
+    clear_page()
+
+    fetch(`https://api.covid19api.com/total/dayone/country/${data}`)
+    .then(function(resp) {return resp.json() })
+    .then(function(data) {
+        
+        datePosition = document.getElementById("date").value
+        chartNumbers = [data[datePosition].Active,data[datePosition].Confirmed,data[datePosition].Deaths,data[datePosition].Recovered]
+        date = data[datePosition].Date.split("T")[0]
+        console.log(date)
+        output = document.getElementById("output")
+        dateElement = document.createElement("h2")
+        dateElement.setAttribute("class","output")
+        dateElement.innerHTML = date
+        output.append(dateElement)
+
+        pieChart = new Chart(myChart, {
+            type:'pie',
+            data:{
+                labels:["Active","Confirmed","Deaths","Recovered"],
+                datasets:[{
+                    label: "Deaths",
+                    data: chartNumbers,
+                    backgroundColor:['#e9c46a','#f4a261','#e76f51','#2a9d8f']
+                }],
+            },
+            options:{}  
+     })
+})
 }

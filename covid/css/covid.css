@@ -20,24 +20,17 @@
 
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
 }
-/*
-@media(max-width:800px){
-    * {
-        width:100%
-    }
-}
-*/
 
 
 #covid, a:visited {
     background: var(--clr-dark-accent);
     color: var(--clr-light-accent);
+    text-decoration: none;
 }
 
 
-a:visited{
+header a:visited{
     color: var(--clr-light-accent);
-    text-decoration: none;
 }
 
 h2,h4{
