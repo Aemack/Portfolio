@@ -21,7 +21,6 @@
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
 }
 
-
 @media(max-width:800px){
     * {
         width:100%
@@ -29,24 +28,19 @@
 }
 
 
-header, a, a:visited {
-    background: var(--clr-mid-accent);
+#covid, a:visited {
+    background: var(--clr-dark-accent);
     color: var(--clr-light-accent);
-    text-decoration: none;
 }
 
 
 a:visited{
     color: var(--clr-light-accent);
+    text-decoration: none;
 }
 
 
 
-
-h2, h4{ 
-    background-color: var(--clr-light-accent);
-    color: var(--clr-dark)
-}
 
 h3,h5{
     
@@ -55,24 +49,38 @@ h3,h5{
 }
 
 
-nav button {
+
+#mainMenu {
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+button {
     background: var(--clr-dark-accent);
     color: var(--clr-light);
-    display: inline-flex;
     margin: 5px;
     
 }
 
-nav button:hover{
+button:hover{
     background: var(--clr-light-accent);
     color:var(--clr-dark)
 }
 
-nav {
-    background: var(--clr-mid-accent);
-    color: var(--clr-dark);
-}
-
 #nameElement{
     text-align: center;
+}
+
+#navbar{
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.output{ 
+    background-color: var(--clr-light-accent);
+    color: var(--clr-dark)
 }
