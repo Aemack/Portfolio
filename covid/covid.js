@@ -11,7 +11,7 @@ function clear_output(){
 }
 
 function clear_navbar() {
-    outputList = document.getElementById("navbar").querySelectorAll("#country")
+    outputList = document.getElementById("navbar").querySelectorAll(".country")
     outputList.forEach((elem) => {
         elem.remove();
     })
@@ -35,11 +35,13 @@ function search_by_country_clicked(){
     search=document.createElement("input")
     search.setAttribute("type","text")
     search.setAttribute("id","country")
+    search.setAttribute("class","country")
     search.setAttribute("placeholder","Country") 
 
     searchButton = document.createElement("button")
     searchButton.setAttribute("onclick","country_clicked()")
-    searchButton.setAttribute("id","country")
+    searchButton.setAttribute("id","countryButton")
+    searchButton.setAttribute("class","country")
     searchButton.innerHTML= "Search Country"
 
     navbar.appendChild(search)
@@ -53,15 +55,16 @@ function country_clicked() {
     fetch(`https://api.covid19api.com/total/country/${country}`)
     .then(function (resp) { return resp.json()})
     .then(function (data){
-        console.log(data.err)
-        if(data.message!="Not Found"){
-            display_country_data(data)
+        console.log(data)
+        console.log(typeof data)
+        if((data.message=="Not Found") || (typeof data === 'string')){
+            output = document.getElementById("output")
+            err= document.createElement("h3")
+            err.setAttribute("class","output")
+            err.innerHTML = "Cannot locate country"
+            output.appendChild(err)                
         } else {
-        output = document.getElementById("output")
-        err= document.createElement("h3")
-        err.setAttribute("class","output")
-        err.innerHTML = "Cannot locate country"
-        output.appendChild(err)
+        display_country_data(data)
         }
     })
 } catch(e){
@@ -74,7 +77,7 @@ function display_country_data(data){
     
     todaysData = data[data.length-1]
     output = document.getElementById("output")
-    nameElement = document.createElement("h5")
+    nameElement = document.createElement("h2")
     nameElement.setAttribute("class","output")
     nameElement.innerHTML = `${todaysData.Country}:`
     nameElement.setAttribute("id","nameElement")
@@ -93,9 +96,9 @@ function display_country_data(data){
     confirmedElement.innerHTML = `Confirmed: ${todaysData.Confirmed}.`
     
     nameElement =document.getElementById("nameElement")
-    nameElement.appendChild(deathElement)
-    nameElement.appendChild(activeElement)
-    nameElement.appendChild(confirmedElement)
+    output.appendChild(deathElement)
+    output.appendChild(activeElement)
+    output.appendChild(confirmedElement)
 
     active = []
     date = []
@@ -113,16 +116,20 @@ function display_country_data(data){
         data:{
             labels:date,
             datasets:[{
-                label: "Active Cases",
-                data:active,
-                backgroundColor:'yellow'
-            },{
                 label: "Deaths",
                 data:deaths,
-                backgroundColor:'red'
+                pointRadius:0,
+                backgroundColor:'#9E2A2B',
+                fill:true
+            },{
+                label: "Active Cases",
+                data:active,
+                pointRadius:0,
+                backgroundColor:'#335C67'
             }],
         },
-        options:{},
+        options:{
+        },
     });
     
 }
@@ -156,7 +163,7 @@ function world_graph (data) {
     })
     
     pieChart = new Chart(myChart, {
-        type:'horizontalBar',
+        type:'bar',
         data:{
             labels:countryLabels,
             datasets:[{
@@ -166,8 +173,11 @@ function world_graph (data) {
                 hoverBackgroundColor:'green'
             }],
         },
-        options:{},
+        options:{        }            
+        
+    
     });
+    pieChart.minWidth="300px"
 
 
 }
