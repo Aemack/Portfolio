@@ -260,8 +260,15 @@ function create_range(){
         newRadio.setAttribute("max",data.length-1)
         newRadio.setAttribute("onchange",`make_day_graph("${name}")`)
         navbar.appendChild(newRadio)
+        console.log(data[1])
+        daysSinceOutbreak = Math.floor(data.length/2)
+        console.log(data[daysSinceOutbreak])
+        return data[daysSinceOutbreak]
+    }).then(function (data) {
+        make_day_graph(data.Country)
     })
-}
+    }
+
 
 function cant_find() {
     output = document.getElementById("output")

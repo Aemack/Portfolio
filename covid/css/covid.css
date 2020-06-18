@@ -8,9 +8,9 @@
 
     --clr-light: #ffffff;
     --clr-dark: #000000;
-    --clr-light-accent: #41EAD4;
-    --clr-mid-accent: #FF0022;
-    --clr-dark-accent: #011627; 
+    --clr-light-accent: #596F62;
+    --clr-mid-accent: #1C3144;
+    --clr-dark-accent: #70161E; 
 
 
     --fs-h1: 3rem;
@@ -22,30 +22,29 @@
 }
 
 
-#covid, a:visited {
-    background: var(--clr-dark-accent);
-    color: var(--clr-light-accent);
+header{
+    background: var(--clr-mid-accent);
+    color: var(--clr-dark);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header a {
     text-decoration: none;
+    color: var(--clr-light);
 }
 
 
-header a:visited{
-    color: var(--clr-light-accent);
+nav button {
+    background: var(--clr-dark-accent);
+    color: var(--clr-light);
+    margin: 5px;
 }
 
-h2,h4{
-    
-    background-color: var(--clr-light-accent);
-    color: var(--clr-dark)
+nav button:hover{
+    background: var(--clr-light-accent);
+    color: var(--clr-dark);
+
 }
-
-
-h3,h5{
-    background-color: var(--clr-dark-accent);
-    color: var(--clr-light)
-}
-
-
 
 #mainMenu {
     display: flex;
@@ -53,30 +52,18 @@ h3,h5{
     
 }
 
-
-button {
-    background: var(--clr-dark-accent);
-    color: var(--clr-light);
-    margin: 5px;
-    
-}
-
-button:hover{
-    background: var(--clr-light-accent);
-    color:var(--clr-dark)
-}
-
-
 #navbar{
     display: flex;
     justify-content: center;
-    
 }
-
 
 .output{
     width: 75%;
     margin: auto;
     display: flex;
     justify-content: center;
+}
+
+#output:first-child{
+    background: var(--clr-light-accent);
 }
