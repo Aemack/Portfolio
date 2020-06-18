@@ -10,6 +10,13 @@ function clear_output(){
     })
 }
 
+function clear_navbar() {
+    outputList = document.getElementById("navbar").querySelectorAll("#country")
+    outputList.forEach((elem) => {
+        elem.remove();
+    })
+}
+
 function destroy_chart(){
     container = document.getElementById("container")
     chart =document.getElementById("myChart")
@@ -21,10 +28,7 @@ function destroy_chart(){
 
 function search_by_country_clicked(){
 
-    outputList = document.getElementById("navbar").querySelectorAll("#country")
-    outputList.forEach((elem) => {
-        elem.remove();
-    })
+    clear_navbar()
 
     navbar = document.getElementById("navbar")
     
@@ -125,6 +129,7 @@ function display_country_data(data){
 
 function world_graph_clicked(){
     clear_page();
+    clear_navbar()
     
     fetch(`https://api.covid19api.com/summary`)
     .then(function (resp) {return resp.json()} )
@@ -167,17 +172,17 @@ function world_graph (data) {
 
 }
 
-/*
+
 //Get summary and create element with total global deaths
-window.onload = function(){
-    fetch(`https://api.covid19api.com/summary`)
-    .then(function (resp) {return resp.json()} )
+window.onload =async function(){
+     fetch(`https://api.covid19api.com/summary`)
+    .then(await function (resp) {return resp.json()} )
     .then(function (data) { 
         var totalGlobalDeaths = document.createElement("h3")
         totalGlobalDeaths.setAttribute("class","output")
         totalGlobalDeaths.setAttribute("id","totalGlobalDeaths")
         totalGlobalDeaths.innerHTML = "Total Global Deaths: "+data.Global.TotalDeaths
-        ouput = document.getElementById("ouput")
-        document.output.appendChild(totalGlobalDeaths)
+        output = document.getElementById("output")
+        output.appendChild(totalGlobalDeaths)
     })
-}*/
+}
