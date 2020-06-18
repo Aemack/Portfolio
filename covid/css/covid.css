@@ -27,6 +27,9 @@
     }
 }
 
+*{
+    width 90%
+}
 
 #covid, a:visited {
     background: var(--clr-dark-accent);
