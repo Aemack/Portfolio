@@ -8,9 +8,9 @@
 
     --clr-light: #ffffff;
     --clr-dark: #000000;
-    --clr-light-accent: #9CC5A1;
-    --clr-mid-accent: #49A078;
-    --clr-dark-accent: #1F2421; 
+    --clr-light-accent: #41EAD4;
+    --clr-mid-accent: #FF0022;
+    --clr-dark-accent: #011627; 
 
 
     --fs-h1: 3rem;
@@ -27,9 +27,6 @@
     }
 }
 
-*{
-    width 90%
-}
 
 #covid, a:visited {
     background: var(--clr-dark-accent);
@@ -42,11 +39,14 @@ a:visited{
     text-decoration: none;
 }
 
-
+h2,h4{
+    
+    background-color: var(--clr-light-accent);
+    color: var(--clr-dark)
+}
 
 
 h3,h5{
-    
     background-color: var(--clr-dark-accent);
     color: var(--clr-light)
 }
@@ -72,9 +72,6 @@ button:hover{
     color:var(--clr-dark)
 }
 
-#nameElement{
-    text-align: center;
-}
 
 #navbar{
     display: flex;
@@ -83,7 +80,9 @@ button:hover{
 }
 
 
-.output{ 
-    background-color: var(--clr-light-accent);
-    color: var(--clr-dark)
+.output{
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
 }
