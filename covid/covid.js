@@ -72,11 +72,7 @@ function country_clicked() {
         console.log(data)
         console.log(typeof data)
         if((data.message=="Not Found") || (typeof data === 'string')){
-            output = document.getElementById("output")
-            err= document.createElement("h3")
-            err.setAttribute("class","output")
-            err.innerHTML = "Cannot locate country"
-            output.appendChild(err)                
+            cant_find()
         } else {
         display_country_data(data)
         }
@@ -200,7 +196,6 @@ function world_graph (data) {
 function by_date_clicked(){
     clear_page()
     clear_navbar()
-    navbar = document.getElementById("navbar");
     create_select()
 
 }
@@ -211,25 +206,50 @@ function create_select(){
     selectCountry.setAttribute("name","countries")
     selectCountry.setAttribute("id","countries")
     selectCountry.setAttribute("class","navbar")
+    
+    
     navbar.appendChild(selectCountry)
-    fetch(`https://api.covid19api.com/countries`)
+    fetch(`https://api.covid19api.com/summary`)
     .then(function (resp) { return resp.json() })
     .then(function (data){
-        data.forEach(country=>{
+        console.log(data)
+        data.Countries.forEach(country=>{
             newOption = document.createElement("option")
             newOption.setAttribute("value",country.Country)
             newOption.setAttribute("class","navbar")
             newOption.innerHTML = country.Country
             selectCountry.appendChild(newOption)
         })
-        return selectCountry.value
-    }).then(data => {create_range(data)})
+        
+        return
+    }).then(data => {
+        selectOption = document.getElementById("countries")
+        countryName = selectOption.value
+
+        selectOption.setAttribute("onchange",`create_range()`)
+
+        console.log(selectOption)
+        create_range(countryName)})
+        
 }
 
-function create_range(data){
-    fetch(`https://api.covid19api.com/total/dayone/country/${data}`)
+function create_range(){
+    clear_output()
+    destroy_chart()
+    selectedCountry = document.getElementById("countries").value
+    fetch(`https://api.covid19api.com/total/dayone/country/${selectedCountry}`)
     .then(function(resp) {return resp.json() })
     .then(function(data) { 
+        
+        oldRange = document.getElementById("date")
+        if (oldRange){
+            oldRange.remove()
+        }
+        if (data.length===0) {
+            cant_find()
+            return
+        } 
+        console.log(data)
         name = data[0].Country
         navbar = document.getElementById("navbar")
         newRadio = document.createElement("input")
@@ -239,13 +259,22 @@ function create_range(data){
         newRadio.setAttribute("min","0")
         newRadio.setAttribute("max",data.length-1)
         newRadio.setAttribute("onchange",`make_day_graph("${name}")`)
-        newRadio.innerHTML = "From Date of first infection" 
         navbar.appendChild(newRadio)
     })
 }
 
+function cant_find() {
+    output = document.getElementById("output")
+    err= document.createElement("h3")
+    err.setAttribute("class","output")
+    err.innerHTML = "Cannot locate country"
+    output.appendChild(err)                
+}
+ 
 function make_day_graph(data){
     clear_page()
+    destroy_chart()
+
 
     fetch(`https://api.covid19api.com/total/dayone/country/${data}`)
     .then(function(resp) {return resp.json() })
@@ -253,16 +282,42 @@ function make_day_graph(data){
         
         datePosition = document.getElementById("date").value
         chartNumbers = [data[datePosition].Active,data[datePosition].Confirmed,data[datePosition].Deaths,data[datePosition].Recovered]
-        date = data[datePosition].Date.split("T")[0]
+        
+        
         console.log(date)
+        
         output = document.getElementById("output")
+        
+        date = data[datePosition].Date.split("T")[0]
         dateElement = document.createElement("h2")
         dateElement.setAttribute("class","output")
         dateElement.innerHTML = date
         output.append(dateElement)
 
+        activeElement = document.createElement("h3")
+        activeElement.setAttribute("class","output")
+        activeElement.innerHTML = `Active: ${data[datePosition].Active}`
+
+        confirmedElement = document.createElement("h4")
+        confirmedElement.setAttribute("class","output")
+        confirmedElement.innerHTML = `Confirmed: ${data[datePosition].Confirmed}`
+
+        deathsElement = document.createElement("h5")
+        deathsElement.setAttribute("class","output")
+        deathsElement.innerHTML = `Deaths: ${data[datePosition].Deaths}`
+        
+        recoveredElement = document.createElement("h6")
+        recoveredElement.setAttribute("class","output")
+        recoveredElement.innerHTML = `Recovered: ${data[datePosition].Active}`
+
+        output.appendChild(activeElement)
+        output.appendChild(confirmedElement)
+        output.appendChild(deathsElement)
+        output.appendChild(recoveredElement)
+
+
         pieChart = new Chart(myChart, {
-            type:'pie',
+            type:'doughnut',
             data:{
                 labels:["Active","Confirmed","Deaths","Recovered"],
                 datasets:[{
