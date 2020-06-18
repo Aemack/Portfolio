@@ -8,8 +8,8 @@
 
     --clr-light: #ffffff;
     --clr-dark: #000000;
-    --clr-light-accent: #2274a5;
-    --clr-dark-accent: #131b23; 
+    --clr-light-accent: #9e2a2b;
+    --clr-dark-accent: #335c67; 
 
 
     --fs-h1: 3rem;
@@ -20,8 +20,15 @@
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
 }
 
-* {
-    min-width: 300px;
+@media(max-width:800px){
+    * {
+        width:100%
+    }
+}
+
+nav {
+    justify-content: space-evenly;
+    margin: auto
 }
 
 header, a {
@@ -30,15 +37,36 @@ header, a {
     text-decoration: none;
 }
 
+a:visited{
+    color: var(--clr-light);
+}
+
+
+
 
 h2, h4{ 
-    margin: 0;
     background-color: var(--clr-light-accent);
     color: var(--clr-dark)
 }
 
 h3,h5{
-    float: end;
+    
     background-color: var(--clr-dark-accent);
     color: var(--clr-light)
+}
+
+
+nav button {
+    background: var(--clr-light-accent);
+    color: var(--clr-light);
+}
+
+nav button:hover{
+    background: var(--clr-dark);
+    color:var(--clr-light-accent)
+}
+
+
+#nameElement{
+    text-align: center;
 }
