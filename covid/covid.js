@@ -188,7 +188,7 @@ window.onload =async function(){
      fetch(`https://api.covid19api.com/summary`)
     .then(await function (resp) {return resp.json()} )
     .then(function (data) { 
-        var totalGlobalDeaths = document.createElement("h3")
+        var totalGlobalDeaths = document.createElement("h4")
         totalGlobalDeaths.setAttribute("class","output")
         totalGlobalDeaths.setAttribute("id","totalGlobalDeaths")
         totalGlobalDeaths.innerHTML = "Total Global Deaths: "+data.Global.TotalDeaths

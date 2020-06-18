@@ -20,12 +20,25 @@
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
 }
 
-
-header {
-    background: var(--clr-dark-accent);
-    color: var(--clr-light);
+* {
+    min-width: 300px;
 }
 
-header a{
+header, a {
+    background: var(--clr-dark-accent);
+    color: var(--clr-light);
     text-decoration: none;
+}
+
+
+h2, h4{ 
+    margin: 0;
+    background-color: var(--clr-light-accent);
+    color: var(--clr-dark)
+}
+
+h3,h5{
+    float: end;
+    background-color: var(--clr-dark-accent);
+    color: var(--clr-light)
 }
