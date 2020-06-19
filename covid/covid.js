@@ -329,7 +329,7 @@ function create_range(){
 
 function previous_day(){
     date = document.getElementById("date")
-    date.value = date.value-1
+    date.value = +date.value-1
     make_day_graph(date.value)
 }
 
