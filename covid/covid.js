@@ -177,18 +177,18 @@ function display_country_data(data){
     
 }
 
-function world_graph_clicked(){
+function world_clicked(){
     clear_page();
     clear_navbar()
+    clear_subnavbar();
+    
+}
+
+function world_graph (data) {
     
     fetch(`https://api.covid19api.com/summary`)
     .then(function (resp) {return resp.json()} )
     .then(function (data) { 
-        world_graph(data)
-     })
-}
-
-function world_graph (data) {
     let myChart = document.getElementById("myChart").getContext("2d")
     pieChart = new Chart(myChart)
     
@@ -220,7 +220,7 @@ function world_graph (data) {
     
     });
     pieChart.minWidth="300px"
-
+})
 
 }
 
