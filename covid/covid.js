@@ -299,6 +299,16 @@ function create_range(){
         newDiv.setAttribute("id","subnav")
         navbar.appendChild(newDiv)
 
+        radioMinus = document.createElement("button")
+        radioMinus.innerHTML = "Previous Day"
+        radioMinus.setAttribute("id","previousButton")
+        radioMinus.setAttribute("onclick","previous_day()")
+
+        radioPlus = document.createElement("button")
+        radioPlus.innerHTML = "Next Day"
+        radioPlus.setAttribute("id","nextButton")
+        radioPlus.setAttribute("onclick","next_day()")
+
 
         newRadio = document.createElement("input")
         newRadio.setAttribute("type","range")
@@ -307,14 +317,28 @@ function create_range(){
         newRadio.setAttribute("min","0")
         newRadio.setAttribute("max",data.length-1)
         newRadio.setAttribute("onchange",`make_day_graph("${name}")`)
+        newDiv.appendChild(radioMinus)
         newDiv.appendChild(newRadio)
+        newDiv.appendChild(radioPlus)
         daysSinceOutbreak = Math.floor(data.length/2)
         return data[daysSinceOutbreak]
     }).then(function (data) {
-        make_day_graph(data.Country)
+        make_day_graph()
     })
     }
 
+function previous_day(){
+    date = document.getElementById("date")
+    date.value = date.value-1
+    make_day_graph(date.value)
+}
+
+function next_day(){
+    date = document.getElementById("date")
+    date.value = +date.value+1
+    
+    make_day_graph()
+}
 
 function cant_find() {
     output = document.getElementById("output")
@@ -324,9 +348,10 @@ function cant_find() {
     output.appendChild(err)                
 }
  
-function make_day_graph(data){
+function make_day_graph(){
     clear_page()
     destroy_chart()
+    data = document.getElementById("countries").value
 
 
     fetch(`https://api.covid19api.com/total/dayone/country/${data}`)
@@ -345,16 +370,21 @@ function make_day_graph(data){
         dateElement.innerHTML = date
         output.append(dateElement)
 
+        daysSinceOutbreak = document.getElementById("date").value
+        daysSince = document.createElement("h5")
+        daysSince.setAttribute("class","output")
+        daysSince.innerHTML = `Days Since First Case: ${daysSinceOutbreak}`
+
         activeElement = document.createElement("h3")
         activeElement.setAttribute("class","output")
         activeElement.innerHTML = `Active: ${data[datePosition].Active}`
 
-        deathsElement = document.createElement("h5")
+        deathsElement = document.createElement("h4")
         deathsElement.setAttribute("class","output")
         deathsElement.innerHTML = `Deaths: ${data[datePosition].Deaths}`
         
 
-
+        output.appendChild(daysSince)
         output.appendChild(activeElement)
         output.appendChild(deathsElement)
         

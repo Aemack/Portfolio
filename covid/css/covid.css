@@ -113,6 +113,9 @@ nav button:hover{
 #navbar button{
     width:40%;
 }
+#previousButton, #nextButton {
+    
+}
 
 
 #main {
