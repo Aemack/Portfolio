@@ -233,7 +233,7 @@ function world_graph () {
         }            
     }); 
     chartElement = document.getElementById("container")
-    chartElement.style.height="1500px"   
+    chartElement.style.height="2000px"   
 })
 
 }
