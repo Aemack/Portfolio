@@ -22,10 +22,6 @@
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
 }
 
-#container{
-    height:600px,
-    width:500px
-}
 
 @media(max-width: 800px){
 
