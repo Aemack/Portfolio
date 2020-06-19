@@ -31,6 +31,14 @@ function clear_navbar() {
     })
 }
 
+function clear_subnavbar(){
+    outputList = document.getElementById("navigation").querySelectorAll("#subnav")
+    console.log('hello')
+    outputList.forEach((elem) => {
+        elem.remove();
+    })
+}
+
 function destroy_chart(){
     container = document.getElementById("container")
     chart =document.getElementById("myChart")
@@ -41,29 +49,52 @@ function destroy_chart(){
 }
 
 function search_by_country_clicked(){
-
+    clear_page()
     clear_navbar()
 
     navbar = document.getElementById("navbar")
+    dailyCountryButton = document.createElement("button")
+    dailyCountryButton.setAttribute("onclick","by_date_clicked()")
+    dailyCountryButton.setAttribute("class","navbar")
+    dailyCountryButton.innerHTML = "By Date"
+    currentCountryButton = document.createElement("button")
+    currentCountryButton.setAttribute("class","navbar")
+    currentCountryButton.setAttribute("onclick","current_country_clicked()")
+    currentCountryButton.innerHTML = "Current Data"
     
+    navbar.appendChild(currentCountryButton)
+    navbar.appendChild(dailyCountryButton)
+}
+
+function current_country_clicked(){
+    oldSubnavbar = document.getElementById("subnav")
+    clear_page()
+
+    if (oldSubnavbar){
+        clear_subnavbar()
+    }
+    menu = document.getElementById("navigation")
+    subnav = document.createElement("div")
+    subnav.setAttribute("id","subnav")
+    menu.appendChild(subnav)
     search=document.createElement("input")
     search.setAttribute("type","text")
     search.setAttribute("id","country")
-    search.setAttribute("class","navbar")
+    search.setAttribute("class","navbar subnavbar")
     search.setAttribute("placeholder","Country") 
 
     searchButton = document.createElement("button")
     searchButton.setAttribute("onclick","country_clicked()")
     searchButton.setAttribute("id","countryButton")
-    searchButton.setAttribute("class","navbar")
+    searchButton.setAttribute("class","navbar subnavbar")
     searchButton.innerHTML= "Search Country"
 
-    navbar.appendChild(search)
-    navbar.appendChild(searchButton)
+    subnav.appendChild(search)
+    subnav.appendChild(searchButton)
 }
 
 function country_clicked() {
-    clear_page()
+    clear_output()
     country = document.getElementById("country").value;
     try{
     fetch(`https://api.covid19api.com/total/country/${country}`)
@@ -195,20 +226,25 @@ function world_graph (data) {
 
 function by_date_clicked(){
     clear_page()
-    clear_navbar()
+    clear_subnavbar()
     create_select()
 
 }
 
 function create_select(){
-    navbar = document.getElementById("navbar")
+    navbar = document.getElementById("navigation")
+    
+    newDiv = document.createElement("div")
+    newDiv.setAttribute("id","subnav")
+    navbar.appendChild(newDiv)
+
     selectCountry = document.createElement("select")
     selectCountry.setAttribute("name","countries")
     selectCountry.setAttribute("id","countries")
-    selectCountry.setAttribute("class","navbar")
+    selectCountry.setAttribute("class","subnav")
     
     
-    navbar.appendChild(selectCountry)
+    newDiv.appendChild(selectCountry)
     fetch(`https://api.covid19api.com/summary`)
     .then(function (resp) { return resp.json() })
     .then(function (data){
@@ -216,7 +252,7 @@ function create_select(){
         data.Countries.forEach(country=>{
             newOption = document.createElement("option")
             newOption.setAttribute("value",country.Country)
-            newOption.setAttribute("class","navbar")
+            newOption.setAttribute("class","subnav")
             newOption.innerHTML = country.Country
             selectCountry.appendChild(newOption)
         })
@@ -251,15 +287,20 @@ function create_range(){
         } 
         console.log(data)
         name = data[0].Country
-        navbar = document.getElementById("navbar")
+        navbar = document.getElementById("navigation")
+        newDiv = document.createElement("div")
+        newDiv.setAttribute("id","subnav")
+        navbar.appendChild(newDiv)
+
+
         newRadio = document.createElement("input")
         newRadio.setAttribute("type","range")
         newRadio.setAttribute("id","date")
-        newRadio.setAttribute("class","navbar")
+        newRadio.setAttribute("class","subnav")
         newRadio.setAttribute("min","0")
         newRadio.setAttribute("max",data.length-1)
         newRadio.setAttribute("onchange",`make_day_graph("${name}")`)
-        navbar.appendChild(newRadio)
+        newDiv.appendChild(newRadio)
         console.log(data[1])
         daysSinceOutbreak = Math.floor(data.length/2)
         console.log(data[daysSinceOutbreak])

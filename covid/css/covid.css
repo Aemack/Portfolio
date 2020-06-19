@@ -62,7 +62,7 @@ nav button:hover{
 
 }
 
-#mainMenu, #navbar {
+#mainMenu, #navbar, #subnav {
     display: flex;
     justify-content: center;
     display: flex;
@@ -84,6 +84,12 @@ nav button:hover{
 #output:first-child{
     background: var(--clr-light-accent);
 }
+
+#navbar, #subnav{
+    display:flex;
+    text-align: center;
+}
+
 @media(max-width:600px){
 
     #mainMenu, #navbar {
