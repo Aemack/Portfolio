@@ -30,7 +30,8 @@ header{
 
 header a {
     text-decoration: none;
-    color: var(--clr-light);
+    color: var(--clr-light);justify-content: center;
+    text-align: center;
 }
 
 
