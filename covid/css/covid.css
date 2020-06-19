@@ -21,6 +21,11 @@
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
 }
 
+@media(max-width: 500px){
+    button {
+        min-width: 30%;
+    }
+}
 
 header{
     background: var(--clr-mid-accent);
