@@ -178,19 +178,23 @@ function display_country_data(data){
 }
 
 function world_clicked(){
+    
+    console.log("dinodance")
     clear_page();
     clear_navbar()
     clear_subnavbar();
-    
+    world_graph()
 }
 
-function world_graph (data) {
+function world_graph () {
+    
     
     fetch(`https://api.covid19api.com/summary`)
     .then(function (resp) {return resp.json()} )
     .then(function (data) { 
     let myChart = document.getElementById("myChart").getContext("2d")
     pieChart = new Chart(myChart)
+    
     
     countryLabels = []
     countryDeaths =[]
@@ -205,7 +209,7 @@ function world_graph (data) {
     })
     
     pieChart = new Chart(myChart, {
-        type:'bar',
+        type:'horizontalBar',
         data:{
             labels:countryLabels,
             datasets:[{
@@ -215,11 +219,21 @@ function world_graph (data) {
                 hoverBackgroundColor:'green'
             }],
         },
-        options:{        }            
-        
-    
-    });
-    pieChart.minWidth="300px"
+        options:{
+            responsive:true,
+            maintainAspectRatio:false,
+            scales:{
+                yAxes:[{
+                    ticks: {
+                        beginAtZero:true,
+                        autoSkip: false
+                    }
+                }]
+            }
+        }            
+    }); 
+    chartElement = document.getElementById("container")
+    chartElement.style.height="1500px"   
 })
 
 }
