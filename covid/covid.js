@@ -288,10 +288,8 @@ function make_day_graph(data){
     .then(function(data) {
         
         datePosition = document.getElementById("date").value
-        chartNumbers = [data[datePosition].Active,data[datePosition].Confirmed,data[datePosition].Deaths,data[datePosition].Recovered]
+        chartNumbers = [data[datePosition].Active,/*data[datePosition].Confirmed,*/data[datePosition].Deaths/*,data[datePosition].Recovered*/]
         
-        
-        console.log(date)
         
         output = document.getElementById("output")
         
@@ -305,35 +303,41 @@ function make_day_graph(data){
         activeElement.setAttribute("class","output")
         activeElement.innerHTML = `Active: ${data[datePosition].Active}`
 
+        /*
         confirmedElement = document.createElement("h4")
         confirmedElement.setAttribute("class","output")
         confirmedElement.innerHTML = `Confirmed: ${data[datePosition].Confirmed}`
-
+        */
         deathsElement = document.createElement("h5")
         deathsElement.setAttribute("class","output")
         deathsElement.innerHTML = `Deaths: ${data[datePosition].Deaths}`
-        
+        /*
         recoveredElement = document.createElement("h6")
         recoveredElement.setAttribute("class","output")
-        recoveredElement.innerHTML = `Recovered: ${data[datePosition].Active}`
+        recoveredElement.innerHTML = `Recovered: ${data[datePosition].Recovered}`
+        */
+
 
         output.appendChild(activeElement)
-        output.appendChild(confirmedElement)
+        //output.appendChild(confirmedElement)
         output.appendChild(deathsElement)
-        output.appendChild(recoveredElement)
+        //output.appendChild(recoveredElement)
+        
+     console.log(chartNumbers)
 
 
         pieChart = new Chart(myChart, {
             type:'doughnut',
             data:{
-                labels:["Active","Confirmed","Deaths","Recovered"],
+                labels:["Active",/*"Confirmed"*/"Deaths"/*"Recovered"*/],
                 datasets:[{
                     label: "Deaths",
                     data: chartNumbers,
-                    backgroundColor:['#e9c46a','#f4a261','#e76f51','#2a9d8f']
+                    backgroundColor:['#e9c46a','#e76f51']
                 }],
             },
             options:{}  
      })
+     console.log()
 })
 }

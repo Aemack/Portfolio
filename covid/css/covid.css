@@ -21,7 +21,7 @@
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
 }
 
-@media(max-width: 600px){
+@media(max-width: 800px){
 
     #mainMenu{
         display:block;
@@ -31,6 +31,7 @@
         width: 80%
     }
 }
+
 
 header{
     background: var(--clr-mid-accent);
@@ -44,6 +45,9 @@ header a {
     text-align: center;
 }
 
+header a:hover {
+    color:var(--clr-dark-accent);
+}
 
 nav button {
     background: var(--clr-dark-accent);
@@ -57,16 +61,13 @@ nav button:hover{
 
 }
 
-#mainMenu {
+#mainMenu, #navbar {
     display: flex;
     justify-content: center;
-    
+    display: flex;
+    justify-content: center;
 }
 
-#navbar{
-    display: flex;
-    justify-content: center;
-}
 
 .output{
     width: 75%;
@@ -77,4 +78,14 @@ nav button:hover{
 
 #output:first-child{
     background: var(--clr-light-accent);
+}
+@media(max-width:600px){
+
+    #mainMenu, #navbar {
+        display: block;
+        
+    }
+    nav {
+        text-align: center;
+    }
 }
