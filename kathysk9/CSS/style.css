@@ -1,0 +1,48 @@
+* {
+    margin: auto;
+}
+
+*{
+    max-width:600px
+}
+/*Custom Properties*/
+:root {
+    --ff-primary: 'Spource Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 400;
+    --fw-bold: 900;
+
+    --clr-light: #ffffff;
+    --clr-dark: #000000;
+    --clr-light-accent: #ffc857;
+    --clr-dark-accent: #2e4052; 
+
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.15rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
+}
+
+#subnav {
+    text-align: center;
+    display: block;
+}
+
+
+#subnav button, #main button {
+    text-align: center;
+    width: 50%;
+}
+
+#main {
+    text-align: center;
+}
+
+
+#subnav select {
+    width: 60%;
+}
