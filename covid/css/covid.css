@@ -72,7 +72,7 @@ nav button:hover{
 
 }
 
-#mainMenu, #navbar, #subnav {
+#mainMenu, #navbar, #subnav,#rangeNav {
     display: flex;
     justify-content: center;
     display: flex;

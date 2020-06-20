@@ -36,7 +36,18 @@ function clear_subnavbar(){
     outputList.forEach((elem) => {
         elem.remove();
     })
+    clear_rangeNav()
 }
+
+function clear_rangeNav() {
+    
+    outputList = document.getElementById("navigation").querySelectorAll("#rangeNav")
+    outputList.forEach((elem) => {
+        elem.remove();
+    })
+}
+
+
 
 function destroy_chart(){
     container = document.getElementById("container")
@@ -259,10 +270,11 @@ function create_select(){
     .then(function (resp) { return resp.json() })
     .then(function (data){
         data.Countries.forEach(country=>{
+            console.log(data)
             newOption = document.createElement("option")
-            newOption.setAttribute("value",country.Country)
+            newOption.setAttribute("value",country.Slug)
             newOption.setAttribute("class","subnav")
-            newOption.innerHTML = country.Country
+            newOption.innerHTML = country.Slug
             selectCountry.appendChild(newOption)
         })
         
@@ -278,13 +290,15 @@ function create_select(){
 }
 
 function create_range(){
+    clear_rangeNav()
+
     clear_output()
     destroy_chart()
     selectedCountry = document.getElementById("countries").value
     fetch(`https://api.covid19api.com/total/dayone/country/${selectedCountry}`)
     .then(function(resp) {return resp.json() })
     .then(function(data) { 
-        
+        console.log(data)
         oldRange = document.getElementById("date")
         if (oldRange){
             oldRange.remove()
@@ -296,7 +310,7 @@ function create_range(){
         name = data[0].Country
         navbar = document.getElementById("navigation")
         newDiv = document.createElement("div")
-        newDiv.setAttribute("id","subnav")
+        newDiv.setAttribute("id","rangeNav")
         navbar.appendChild(newDiv)
 
         radioMinus = document.createElement("button")
@@ -313,7 +327,7 @@ function create_range(){
         newRadio = document.createElement("input")
         newRadio.setAttribute("type","range")
         newRadio.setAttribute("id","date")
-        newRadio.setAttribute("class","subnav")
+        newRadio.setAttribute("class","radioNav")
         newRadio.setAttribute("min","0")
         newRadio.setAttribute("max",data.length-1)
         newRadio.setAttribute("onchange",`make_day_graph("${name}")`)
