@@ -66,12 +66,25 @@ function change_description(fixTitle){
 	if (oldFix){
 		oldFix.remove()
 	}
-	output = document.getElementById("main")
+	main = document.getElementById("main")
+	output = document.createElement("div")
+	output.setAttribute("id","fix")
+	main.appendChild(output)
+	titleElement = document.createElement("h5")
 	descriptionElement = document.createElement("p")
-	descriptionElement.setAttribute("id","fix")
-	descriptionElement.setAttribute("class","collapse output")
+	descriptionElement.setAttribute("id","fixDescription")
+	descriptionElement.setAttribute("class","output")
+	titleElement.setAttribute("class","output")
+	titleElement.setAttribute("id","titleDescription")
+	titleElement.innerText = fixTitle
+	imageSource = fix_image(fixTitle)
+	imageElement = document.createElement("img")
+	imageElement.setAttribute("src",`imgs/${imageSource}`)
+	imageElement.setAttribute("class",`output`)
 	descriptionElement.innerText = fix_description(fixTitle)
+	output.appendChild(titleElement)
 	output.appendChild(descriptionElement)
+	output.appendChild(imageElement)
 }
 
 function fix_description(fix) {
@@ -101,6 +114,32 @@ function fix_description(fix) {
 
 	}
 	
+}
+
+function fix_image(fix){
+	switch (fix){
+		case "Check the enviroment":
+			return "bitingDog.jpg"
+			break;
+		case "Check Routines":
+			return "dog-routine.jpg"
+			break;
+		case "Remove Cause":
+			return "See if you can remove whatever is causing the dog to be upset or it may maul a child"
+			break;
+		case "Manage the Situation":
+			return "Manage the situation and be aware of your surroundings. If you are in a play park, the dog may maul a child"
+			break;
+		case "Spay":
+			return "Make it have babies no more"
+			break;
+		case "Neuter":
+			return "Take away its balls"
+			break;
+		default:
+			return "Dogs rely on routine so when they don't get their food or walk at the right time they may maul a child"
+			break;
+	}	
 }
 
 function clear_all(){

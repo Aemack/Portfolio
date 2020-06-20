@@ -3,7 +3,7 @@
 }
 
 *{
-    max-width:600px
+    max-width:800px
 }
 /*Custom Properties*/
 :root {
@@ -33,7 +33,7 @@
 }
 
 
-#subnav button, #main button {
+#subnav button {
     text-align: center;
     width: 50%;
 }
@@ -47,6 +47,15 @@
     text-align: center;
 }
 
+#main button{
+    text-align: center;
+    width: 40%;
+    margin:5px;
+}
+
+#main img{
+    width:400px;
+}
 
 #subnav select {
     width: 60%;
