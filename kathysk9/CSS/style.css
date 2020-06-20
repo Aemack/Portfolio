@@ -38,6 +38,11 @@
     width: 50%;
 }
 
+#subnav .option{
+    margin:5px;
+    width:40%;
+}
+
 #main {
     text-align: center;
 }
