@@ -8,7 +8,7 @@ function issue_changed(){
 function display_cause_options(issue) {
 	switch (issue) {
 		case "biting":
-			options = ["frustration","redirected agression","fear","pain"]
+			options = ["Frustration","redirected agression","fear","pain"]
 			break;
 		case "humping":
 			options=["In Heat","Domminance"]
@@ -30,11 +30,10 @@ function display_cause_options(issue) {
 
 function display_fix_options(cause){
 	clear_output()
-	
-	console.log("hi")
+	display_cause_details(cause)
 	mainBody = document.getElementById("main")
 	switch (cause) {
-		case "frustration":
+		case "Frustration":
 			fixOptions=["Check the enviroment","Check Routines","Remove Cause","Manage the Situation"];
 			break;
 		case "In Heat":
@@ -58,6 +57,36 @@ function display_fix_options(cause){
 		mainBody.appendChild(fixHeading)
 		
 	})
+}
+
+function display_cause_details(cause){
+	description = cause_description(cause)
+	console.log(cause)
+	navbar = document.getElementById("main")
+	causeElement = document.createElement("div")
+	causeElement.setAttribute("class","output")
+	causeTitle = document.createElement("h5")
+	causeTitle.innerHTML = cause
+	causeTitle.setAttribute("class","output")
+	causeDescription = document.createElement("p")
+	causeDescription.innerHTML = description
+	causeDescription.setAttribute("class","output")
+	navbar.appendChild(causeElement)
+	causeElement.appendChild(causeTitle)
+	causeElement.appendChild(causeDescription)
+}
+
+function cause_description(cause){
+	switch (cause){
+		case "Frustration":
+			return "Frustration is when a dog gets real mad about stuff"
+			break;
+		case "Redirected Aggression":
+			return "Sometimes a dog is mad and they cant control who at"
+		default:
+			return "this is some default";
+			break;
+	}
 }
 
 function change_description(fixTitle){
@@ -125,19 +154,19 @@ function fix_image(fix){
 			return "dog-routine.jpg"
 			break;
 		case "Remove Cause":
-			return "See if you can remove whatever is causing the dog to be upset or it may maul a child"
+			return "dogs.jpg"
 			break;
 		case "Manage the Situation":
-			return "Manage the situation and be aware of your surroundings. If you are in a play park, the dog may maul a child"
+			return "dogs.jpg"
 			break;
 		case "Spay":
-			return "Make it have babies no more"
+			return "dogs.jpg"
 			break;
 		case "Neuter":
-			return "Take away its balls"
+			return "dogs.jpg"
 			break;
 		default:
-			return "Dogs rely on routine so when they don't get their food or walk at the right time they may maul a child"
+			return "dogs.jpg"
 			break;
 	}	
 }
