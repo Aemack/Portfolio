@@ -5,6 +5,7 @@
 *{
     max-width:800px
 }
+
 /*Custom Properties*/
 :root {
     --ff-primary: 'Spource Sans Pro', sans-serif;
@@ -13,10 +14,12 @@
     --fw-reg: 400;
     --fw-bold: 900;
 
-    --clr-light: #ffffff;
-    --clr-dark: #000000;
-    --clr-light-accent: #ffc857;
-    --clr-dark-accent: #2e4052; 
+    --clr-light: #fbf5f3;
+    --clr-dark: #0F0E0E;
+    --clr-accent1:#70161E;
+    --clr-accent2: #7EA16B;
+    --clr-accent3: #596F62;
+    --clr-accent4: #1C3144; 
 
 
     --fs-h1: 3rem;
@@ -54,9 +57,23 @@
 }
 
 #main img{
-    width:400px;
+    width:40%;
 }
 
 #subnav select {
     width: 60%;
+}
+
+@media(max-width:600px){
+
+
+
+    #subnav .option, #subnav select {
+        width:90%;
+    }
+
+    #main button {
+        width:80%;
+    }
+    
 }
