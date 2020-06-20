@@ -2,10 +2,6 @@
     margin: auto;
 }
 
-*{
-    max-width:800px
-}
-
 /*Custom Properties*/
 :root {
     --ff-primary: 'Spource Sans Pro', sans-serif;
@@ -30,6 +26,21 @@
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
 }
 
+header{
+    background: var(--clr-dark);
+    color:var(--clr-light);
+}
+
+#title, #subtitle{
+    text-align: center;
+    font-family: serif;
+}
+
+header #logo{
+    width:100px;
+    position: absolute;
+}
+
 #subnav {
     text-align: center;
     display: block;
@@ -44,6 +55,18 @@
 #subnav .option{
     margin:5px;
     width:40%;
+}
+
+aside{
+    position: fixed;
+    max-width: 20%;
+    left:-5px;
+    border: ridge;
+    border-color: var(--clr-accent3);
+    font-family: serif;
+    background: var(--clr-accent4);
+    color: var(--clr-light);
+    padding:5px;
 }
 
 #main {
@@ -64,12 +87,10 @@
     width: 60%;
 }
 
-@media(max-width:500px){
-    *{
-        max-width:500px
+@media(max-width:600px){
+    .logo {
+        opacity: 0;
     }
-
-
 
     #subnav .option, #subnav select {
         width:90%;

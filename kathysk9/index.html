@@ -19,12 +19,19 @@
 </head>
 <body>
     <header>
+        <img class="logo" id="logo" src="imgs/logo.png">
         <a href="https://kathysk9solutions.co.uk/"><h2 id="title" class="heading">Kathy's K9 Solutions</h2></a>
         <h5 id="subtitle" class="heading">Training Quiz</h5>
     </header>
     
+    <aside>
+        <h5>Note</h5>
+        <p>Work in Progress</p>
+        <button onclick="clear_all()">Clear All</button>
+    </aside>
     <div id="subnav">
-        <select onchange="issue_changed()" id="issue">   
+        <select onchange="issue_changed()" id="issue">
+            <option value="default">Choose an Option</option>   
             <option value="humping">Humping</option>
             <option value="biting">Biting</option>
         </select>
