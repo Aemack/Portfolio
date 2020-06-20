@@ -314,12 +314,12 @@ function create_range(){
         navbar.appendChild(newDiv)
 
         radioMinus = document.createElement("button")
-        radioMinus.innerHTML = "Previous Day"
+        radioMinus.innerHTML = "<"
         radioMinus.setAttribute("id","previousButton")
         radioMinus.setAttribute("onclick","previous_day()")
 
         radioPlus = document.createElement("button")
-        radioPlus.innerHTML = "Next Day"
+        radioPlus.innerHTML = ">"
         radioPlus.setAttribute("id","nextButton")
         radioPlus.setAttribute("onclick","next_day()")
 

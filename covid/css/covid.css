@@ -114,6 +114,9 @@ nav button:hover{
     width:40%;
 }
 #previousButton, #nextButton {
+    background: var(--clr-accent1);
+    color:var(--clr-dark);
+    
     
 }
 
