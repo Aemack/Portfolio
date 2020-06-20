@@ -10,6 +10,9 @@ function display_cause_options(issue) {
 		case "biting":
 			options = ["frustration","redirected agression","fear","pain"]
 			break;
+		case "humping":
+			options=["In Heat","Domminance"]
+			break;
 		default:
 			options = "err"
 	}
@@ -33,6 +36,9 @@ function display_fix_options(cause){
 	switch (cause) {
 		case "frustration":
 			fixOptions=["Check the enviroment","Check Routines","Remove Cause","Manage the Situation"];
+			break;
+		case "In Heat":
+			fixOptions=["Spay","Neuter"];
 			break;
 		default:
 			fixOptions=["Just","a","bit of placefilling"]
@@ -63,7 +69,7 @@ function change_description(fixTitle){
 	output = document.getElementById("main")
 	descriptionElement = document.createElement("p")
 	descriptionElement.setAttribute("id","fix")
-	descriptionElement.setAttribute("class","collapse")
+	descriptionElement.setAttribute("class","collapse output")
 	descriptionElement.innerText = fix_description(fixTitle)
 	output.appendChild(descriptionElement)
 }
@@ -81,6 +87,12 @@ function fix_description(fix) {
 			break;
 		case "Manage the Situation":
 			return "Manage the situation and be aware of your surroundings. If you are in a play park, the dog may maul a child"
+			break;
+		case "Spay":
+			return "Make it have babies no more"
+			break;
+		case "Neuter":
+			return "Take away its balls"
 			break;
 		default:
 			return "Dogs rely on routine so when they don't get their food or walk at the right time they may maul a child"
