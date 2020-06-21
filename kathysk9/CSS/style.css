@@ -15,7 +15,7 @@
     --clr-accent1:#70161E;
     --clr-accent2: #7EA16B;
     --clr-accent3: #596F62;
-    --clr-accent4: #1C3144; 
+    --clr-accent4: #b0e0e6; 
 
 
     --fs-h1: 3rem;
@@ -71,9 +71,11 @@ aside{
 
 #main {
     text-align: center;
+    
     background-image: url(../imgs/dogbog.jpg);
+    
     background-size: cover;
-    background-blend-mode: darken;
+    background-blend-mode: color-burn;
 }
 
 #main button{
@@ -89,6 +91,20 @@ aside{
 
 #subnav select {
     width: 60%;
+}
+
+#main h5 {
+    font-weight: 900;
+    color: var(--clr-dark);
+}
+
+#main p {
+    color: var(--clr-dark);
+    font-weight: 600;
+    font-size: 2rem;
+    margin:auto;
+    width:50%;
+    
 }
 
 @media(max-width:600px){
