@@ -8,7 +8,7 @@ function issue_changed(){
 function display_cause_options(issue) {
 	switch (issue) {
 		case "biting":
-			options = ["Frustration","Redirected Aggression","Fear","Pain"]
+			options = ["Frustration","Redirected Aggression","Fear","Pain","Puppy Biting"]
 			break;
 		case "humping":
 			options=["In Heat","Domminance"]
@@ -34,7 +34,7 @@ function display_fix_options(cause){
 	mainBody = document.getElementById("causeDescription")
 	switch (cause) {
 		case "Frustration":
-			fixOptions=["Check the enviroment","Check Routines","Consider Exercise","Consider Boredom","Remove Cause","Consider breed of dog","Consider dog training"];
+			fixOptions=["Check the Enviroment","Check Routines","Consider Exercise","Consider Boredom","Remove Cause","Consider Breed of Dog","Consider Dog training"];
 			break;
 		case "Fear":
 			fixOptions=["Visit a Behaviourist","Establish Trigger","Multi Stacking Triggers","Counter-Condition","Desensitise to Trigger","Teach Calming Protocol"]
@@ -42,9 +42,19 @@ function display_fix_options(cause){
 		case "Pain":
 			fixOptions=["Visit a Vet","Treatment Needs","Keep Safe","Safe Haven"];
 			break;
-		case "In Heat":
-			fixOptions=["Spay","Neuter"];
+		case "Dominant Male to Male Aggression":
+			fixOptions=["Nueter","Vet Approved Hormone Treatment","Consider Calming Diffuser","Consider a Safe Haven"];
 			break;
+		case "In Heat":
+			fixOptions=["Vet Approved Hormone Treatment","Spay","Consider Calming Diffuser","Consider a Safe Haven"]
+		case "Puppy Biting":
+			fixOptions=["Puppy Training Classes","Remove Interaction","Distract and Reward","Find a Mutually Exclusive Behaviour","Consider Enough Rest","Consider Calming Protocols","Consider a Safe Haven","Spay"]
+			break;
+		case "Redirected Aggression":
+			fixOptions = ["Visit a Behaviourist"]
+			break;
+		case "Teething":
+			fixOptions=["Visit a Vet","Consider a Variety of Chews"]
 		default:
 			fixOptions=["Just","a","bit of placefilling"]
 	}
@@ -132,10 +142,10 @@ function change_description(fixTitle){
 
 function fix_description(fix) {
 	switch (fix){
-		case "Check the enviroment":
+		case "Check the Enviroment":
 			return "Is your dog happy with the environment he is living in? Is there fresh water always available? Is there a noise or strong smell that might be uncomfortable, is he able to get peace or are there always people, pets etc busying around, does he have a place to sleep that is comfortable and away from distractions, is the music in the house too loud, TV volume or surround sound? Is he eating a good diet the best you can afford that suits him. Is he allowed out to the toilet regularly, is he left alone for long periods of time regularly? Does he live with or near something that frightens him ie another pet or child, the dog next door? Does he have enough enrichment in his environment?          Is the temperature within his living area set too high or low? It maybe that more than one of these things is increasing your dog’s anxiety levels and you should try and make sure that all the needs of your dog are met in his environment"
 			break;
-		case "Visit a behaviourist":
+		case "Visit a Behaviourist":
 			return "A canine behaviourist is someone who has trained to help dog guardians understand why their dog is behaving in the way it is. They will discuss the issues and do a lot of detective work to find out why your dog behaves the way it does. They will then suggest a programme for you and your dog and support you through it if necessary"
 		case "Check Routines":
 			return "Dog's live their lives with very little choice, they rely on us to know their needs and meet them. It is important that dogs have daily schedules rather than routines. Schedules mean that mostly you will get walked twice a day, but sometimes 9-30 sometimes 10, it will happen but not at a precise time.  It is important that the dog knows his needs will be met, but he should not be pinned down to a routine so that when he cannot be fed at 5 O’clock on the dot, he will not get frustrated or anxious. However, routines are important for puppies and new dogs as they acclimatise themselves to living with you. Routines for toilet and feed times etc will be useful, but you will gradually want to loosen them into structures rather than routines"
@@ -156,7 +166,7 @@ function fix_description(fix) {
 			return "Take away its balls"
 			break;
 		default:
-			return "Just some plefiller text. Dogs are indeed dogs, they bark, woof get sratches. Only if they're good boys."
+			return "Just some plefiller text. Dogs are indeed dogs, they bark, woof get sratches. Only if they're good boys. But these guys are just the goodest boys"
 			break;
 				
 
