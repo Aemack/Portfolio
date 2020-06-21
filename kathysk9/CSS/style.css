@@ -12,10 +12,10 @@
 
     --clr-light: #fbf5f3;
     --clr-dark: #0F0E0E;
-    --clr-accent1:#1B9AAA;
-    --clr-accent2: #DDDBCB;
-    --clr-accent3: #F5F1E3;
-    --clr-accent4: #b0e0e6; 
+    --clr-accent1:#44CFCB;
+    --clr-accent2: #4EA5D9;
+    --clr-accent3: #2A4494;
+    --clr-accent4: #224870; 
 
 
     --fs-h1: 3rem;
@@ -59,6 +59,7 @@ header #logo{
 #subnav button {
     text-align: center;
     width: 50%;
+    color: var(--clr-light);
 }
 
 #subnav .option{
@@ -89,6 +90,7 @@ aside{
 #main {
     text-align: center;
     justify-content: space-evenly;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .output{
@@ -96,7 +98,7 @@ aside{
 }
 
 .btn{
-    background: var(--clr-accent2);
+    background: var(--clr-accent1);
     color:var(--clr-dark);
     margin:5px;
 }
@@ -108,7 +110,7 @@ aside{
 
 .btn:focus {
     scale: 1.5;
-    background: var(--clr-accent2);
+    background: var(--clr-accent3);
     color:var(--clr-accent1)
 }
 
@@ -144,6 +146,12 @@ aside{
 #fix {
     background: var(--clr-accent3);
     width: 50%;
+    opacity: 0.95;
+}
+#causeDescription{
+    background: var(--clr-accent2);
+    width:60%;
+    opacity: 0.95;
 }
 @media(max-width:600px){
     .logo {

@@ -31,7 +31,7 @@ function display_cause_options(issue) {
 function display_fix_options(cause){
 	clear_output()
 	display_cause_details(cause)
-	mainBody = document.getElementById("main")
+	mainBody = document.getElementById("causeDescription")
 	switch (cause) {
 		case "Frustration":
 			fixOptions=["Check the enviroment","Check Routines","Remove Cause","Manage the Situation"];
@@ -64,6 +64,7 @@ function display_cause_details(cause){
 	console.log(cause)
 	navbar = document.getElementById("main")
 	causeElement = document.createElement("div")
+	causeElement.setAttribute("id","causeDescription")
 	causeElement.setAttribute("class","output")
 	causeTitle = document.createElement("h5")
 	causeTitle.innerHTML = cause
