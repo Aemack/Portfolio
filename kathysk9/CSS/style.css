@@ -38,7 +38,7 @@ header{
 
 header a {
     text-decoration: none;
-    color: var(--clr-accent1)
+    color: var(--clr-accent3)
 }
 
 header h5{
@@ -145,13 +145,14 @@ aside{
 }
 #fix {
     background: var(--clr-accent3);
-    width: 50%;
+    width: 58%;
     opacity: 0.95;
 }
 #causeDescription{
     background: var(--clr-accent2);
     width:60%;
     opacity: 0.95;
+    box-shadow: var(--bs);
 }
 @media(max-width:600px){
     .logo {
