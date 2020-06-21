@@ -38,11 +38,19 @@ header{
     font-weight: 900;
 }
 
-
 header a {
     text-decoration: none;
     color: var(--clr-accent3);
+}
 
+#title::after{
+        content: '';
+        display: block;
+        width: 15%;
+        height: 1.5px;
+        margin: 0.5em auto 1em;
+        background: var(--clr-accent4);
+        opacity: .5;
 }
 
 header h5{
@@ -162,10 +170,31 @@ aside{
     opacity: 0.95;
     box-shadow: var(--bs);
 }
+
+#title,#subtitle{
+    background: var(--clr-accent4);
+    color:var(--clr-light);
+    opacity:.5;
+}
+
+#title{
+    width:40%;
+}
+#subtitle{
+    width:25%;
+}
+
+
 @media(max-width:600px){
     .logo {
         display: none;
     }
+
+    
+#title,#subtitle{
+    background: none;
+    opacity:1;
+}
 
     #subnav .option, #subnav select {
         width:90%;
