@@ -26,6 +26,7 @@
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
 }
 
+
 header{
     /*background: var(--clr-dark);*/
     color:var(--clr-light);
@@ -34,13 +35,13 @@ header{
 #title, #subtitle{
     text-align: center;
     font-family: serif;
-    
+    text-shadow: var(--clr-dark);
     font-weight: 900;
 }
 
 header a {
     text-decoration: none;
-    color: var(--clr-accent3);
+    color: var(--clr-dark);
 }
 
 #title::after{
@@ -94,6 +95,8 @@ aside{
 
 #body{
     background: url(../imgs/dogbog.jpg) no-repeat center center fixed;
+    background-attachment: fixed;
+    overflow: hidden;
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
@@ -171,18 +174,16 @@ aside{
     box-shadow: var(--bs);
 }
 
-#title,#subtitle{
-    background: var(--clr-accent4);
-    color:var(--clr-light);
-    opacity:.5;
-}
 
 #title{
     width:40%;
+    background: rgba(42, 68, 148, 0.2);
+    font-family: lobster;
 }
 #subtitle{
     width:25%;
 }
+
 
 
 @media(max-width:600px){
@@ -192,8 +193,7 @@ aside{
 
     
 #title,#subtitle{
-    background: none;
-    opacity:1;
+    background: rgba(42, 68, 148, 0.1)
 }
 
     #subnav .option, #subnav select {

@@ -11,3 +11,20 @@ navLinks.forEach(link => {
         document.body.classList.remove('nav-open');
     })
 })
+
+function animate_gif(){
+    console.log("hi")
+    picture = document.getElementById("introPic")
+    picture.setAttribute("src","img/ratsmile.gif")
+    picture.setAttribute("id","introPicAnim")
+    
+}
+
+function stop_gif(){
+    picture = document.getElementById("introPicAnim")
+    picture.setAttribute("src","img/introPicture.jpg")
+    
+
+}
+
+window.onscroll = function () {animate_gif()}
