@@ -71,6 +71,9 @@ aside{
 
 #main {
     text-align: center;
+    background-image: url(../imgs/dogbog.jpg);
+    background-size: cover;
+    background-blend-mode: darken;
 }
 
 #main button{
@@ -81,6 +84,7 @@ aside{
 
 #main img{
     width:40%;
+    box-shadow: var(--bs);
 }
 
 #subnav select {

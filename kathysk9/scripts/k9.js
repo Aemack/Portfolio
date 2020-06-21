@@ -108,7 +108,7 @@ function change_description(fixTitle){
 	titleElement.innerText = fixTitle
 	imageSource = fix_image(fixTitle)
 	imageElement = document.createElement("img")
-	imageElement.setAttribute("src",`imgs/${imageSource}`)
+	imageElement.setAttribute("src",`${imageSource}`)
 	imageElement.setAttribute("class",`output`)
 	descriptionElement.innerText = fix_description(fixTitle)
 	output.appendChild(titleElement)
@@ -148,25 +148,16 @@ function fix_description(fix) {
 function fix_image(fix){
 	switch (fix){
 		case "Check the enviroment":
-			return "bitingDog.jpg"
+			return "imgs/bitingDog.jpg"
 			break;
 		case "Check Routines":
-			return "dog-routine.jpg"
-			break;
-		case "Remove Cause":
-			return "dogs.jpg"
-			break;
-		case "Manage the Situation":
-			return "dogs.jpg"
-			break;
-		case "Spay":
-			return "dogs.jpg"
-			break;
-		case "Neuter":
-			return "dogs.jpg"
+			return "imgs/dog-routine.jpg"
 			break;
 		default:
-			return "dogs.jpg"
+			ranNum = Math.floor(Math.random()*3)
+			console.log(ranNum)
+			dogImages = ["imgs/dogs.jpg","imgs/bitingDog.jpg","imgs/dog-routine.jpg"]
+			return dogImages[ranNum]
 			break;
 	}	
 }
