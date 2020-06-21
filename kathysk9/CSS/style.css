@@ -61,6 +61,7 @@ aside{
     position: fixed;
     max-width: 20%;
     left:-5px;
+    bottom:50px;
     border: ridge;
     border-color: var(--clr-accent3);
     font-family: serif;
