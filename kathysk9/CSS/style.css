@@ -12,9 +12,9 @@
 
     --clr-light: #fbf5f3;
     --clr-dark: #0F0E0E;
-    --clr-accent1:#70161E;
-    --clr-accent2: #7EA16B;
-    --clr-accent3: #596F62;
+    --clr-accent1:#1B9AAA;
+    --clr-accent2: #DDDBCB;
+    --clr-accent3: #F5F1E3;
     --clr-accent4: #b0e0e6; 
 
 
@@ -27,7 +27,7 @@
 }
 
 header{
-    background: var(--clr-dark);
+    /*background: var(--clr-dark);*/
     color:var(--clr-light);
 }
 
@@ -70,16 +70,42 @@ aside{
     padding:5px;
 }
 
-#main {
-    text-align: center;
-    
+#body{
     background-image: url(../imgs/dogbog.jpg);
-    
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100%;
     background-blend-mode: color-burn;
 }
 
-#main button{
+#main {
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.output{
+    color: var(--clr-light);
+}
+
+.btn{
+    background: var(--clr-accent2);
+    color:var(--clr-dark);
+    margin:5px;
+}
+
+.btn:hover {
+    background: var(--clr-accent3);
+    color:var(--clr-accent1)
+}
+
+.btn:focus {
+    scale: 1.5;
+    background: var(--clr-accent2);
+    color:var(--clr-accent1)
+}
+
+.option {
+    background: var(--clr-accent3);
+    color:var(--clr-dark);
     text-align: center;
     width: 40%;
     margin:5px;
@@ -102,12 +128,14 @@ aside{
 #main p {
     color: var(--clr-dark);
     font-weight: 600;
-    font-size: 2rem;
     margin:auto;
-    width:50%;
+    width:60%;
     
 }
-
+#fix {
+    background: var(--clr-accent3);
+    width: 50%;
+}
 @media(max-width:600px){
     .logo {
         opacity: 0;
