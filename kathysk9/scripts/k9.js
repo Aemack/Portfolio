@@ -10,8 +10,11 @@ function display_cause_options(issue) {
 		case "biting":
 			options = ["Frustration","Redirected Aggression","Fear","Pain","Puppy Biting"]
 			break;
+		case "chewing":
+			options =["Pain","Teething"];
+			break;
 		case "humping":
-			options=["In Heat","Domminance"]
+			options=["In Heat","Male"]
 			break;
 		default:
 			options = "err"
@@ -47,6 +50,7 @@ function display_fix_options(cause){
 			break;
 		case "In Heat":
 			fixOptions=["Vet Approved Hormone Treatment","Spay","Consider Calming Diffuser","Consider a Safe Haven"]
+			break;
 		case "Puppy Biting":
 			fixOptions=["Puppy Training Classes","Remove Interaction","Distract and Reward","Find a Mutually Exclusive Behaviour","Consider Enough Rest","Consider Calming Protocols","Consider a Safe Haven","Spay"]
 			break;
@@ -55,6 +59,7 @@ function display_fix_options(cause){
 			break;
 		case "Teething":
 			fixOptions=["Visit a Vet","Consider a Variety of Chews"]
+			break;
 		default:
 			fixOptions=["Just","a","bit of placefilling"]
 	}
@@ -183,7 +188,7 @@ function fix_image(fix){
 			return "imgs/dog-routine.jpg"
 			break;
 		default:
-			ranNum = Math.floor(Math.random()*7)
+			ranNum = Math.floor(Math.random()*10)
 			return `imgs/dogs${ranNum}.jpeg`
 			break;
 	}	
