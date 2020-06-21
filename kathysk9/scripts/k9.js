@@ -37,10 +37,10 @@ function display_fix_options(cause){
 			fixOptions=["Check the enviroment","Check Routines","Consider Exercise","Consider Boredom","Remove Cause","Consider breed of dog","Consider dog training"];
 			break;
 		case "Fear":
-			fixOptions=["Visit a behaviourist","Establish trigger","Consider multi stacking triggers","Counter -condition","Desensitise to trigger","Teach calming protocol"]
+			fixOptions=["Visit a Behaviourist","Establish Trigger","Multi Stacking Triggers","Counter-Condition","Desensitise to Trigger","Teach Calming Protocol"]
 			break;
 		case "Pain":
-			fixOptions=["Visit a Vet","Meet treatment needs","Keep safe","Safe Haven"];
+			fixOptions=["Visit a Vet","Treatment Needs","Keep Safe","Safe Haven"];
 			break;
 		case "In Heat":
 			fixOptions=["Spay","Neuter"];
