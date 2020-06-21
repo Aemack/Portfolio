@@ -164,7 +164,7 @@ aside{
 }
 @media(max-width:600px){
     .logo {
-        opacity: 0;
+        display: none;
     }
 
     #subnav .option, #subnav select {
