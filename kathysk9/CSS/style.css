@@ -81,9 +81,9 @@ aside{
 
 #body{
     background-image: url(../imgs/dogbog.jpg);
-    background-repeat: stretch;
+    background-repeat: space;
+    background-blend-mode: difference;
     background-size: 100%;
-    background-blend-mode: color-burn;
 }
 
 #main {
