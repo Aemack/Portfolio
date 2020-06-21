@@ -171,7 +171,7 @@ function clear_subnav(){
     outputList = document.getElementById("subnav").querySelectorAll(".option")
     outputList.forEach((elem) => {
         elem.remove();
-    })
+	})
 }
 
 function clear_output(){
