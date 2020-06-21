@@ -34,7 +34,7 @@ function display_fix_options(cause){
 	mainBody = document.getElementById("causeDescription")
 	switch (cause) {
 		case "Frustration":
-			fixOptions=["Check the enviroment","Check Routines","Consider Exercise","Consider Boredom","Remove Cause","Consider behaviour needs of breed of dog","Consider dog training"];
+			fixOptions=["Check the enviroment","Check Routines","Consider Exercise","Consider Boredom","Remove Cause","Consider breed of dog","Consider dog training"];
 			break;
 		case "Fear":
 			fixOptions=["Visit a behaviourist","Establish trigger","Consider multi stacking triggers","Counter -condition","Desensitise to trigger","Teach calming protocol"]
