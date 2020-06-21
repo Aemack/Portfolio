@@ -34,11 +34,13 @@ header{
 #title, #subtitle{
     text-align: center;
     font-family: serif;
+    
+    font-weight: 900;
 }
 
 header a {
     text-decoration: none;
-    color: var(--clr-accent3)
+    color: var(--clr-accent3);
 }
 
 header h5{
@@ -137,11 +139,11 @@ aside{
 
 #main h5 {
     font-weight: 900;
-    color: var(--clr-dark);
+    color: var(--clr-light);
 }
 
 #main p {
-    color: var(--clr-dark);
+    color: var(--clr-light);
     font-weight: 600;
     margin:auto;
     width:60%;
