@@ -8,7 +8,7 @@ function issue_changed(){
 function display_cause_options(issue) {
 	switch (issue) {
 		case "biting":
-			options = ["Frustration","Redirected Aggression","fear","pain"]
+			options = ["Frustration","Redirected Aggression","Fear","Pain"]
 			break;
 		case "humping":
 			options=["In Heat","Domminance"]
