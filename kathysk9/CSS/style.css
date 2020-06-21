@@ -47,7 +47,7 @@ header h5{
 
 header #logo{
     width:100px;
-    position: absolute;
+    position: fixed;
 }
 
 #subnav {
@@ -81,10 +81,14 @@ aside{
 }
 
 #body{
-    background-image: url(../imgs/dogbog.jpg);
-    background-repeat: space;
+    background: url(../imgs/dogbog.jpg) no-repeat center center fixed;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+
+
     background-blend-mode: difference;
-    background-size: 100%;
+    background-size:cover;
 }
 
 #main {
