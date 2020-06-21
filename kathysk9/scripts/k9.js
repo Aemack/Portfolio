@@ -108,34 +108,40 @@ function change_description(fixTitle){
 	output.setAttribute("id","fix")
 	main.appendChild(output)
 	titleElement = document.createElement("h5")
-	descriptionElement = document.createElement("p")
-	descriptionElement.setAttribute("id","fixDescription")
-	descriptionElement.setAttribute("class","output")
 	titleElement.setAttribute("class","output")
 	titleElement.setAttribute("id","titleDescription")
 	titleElement.innerText = fixTitle
-	imageSource = fix_image(fixTitle)
-	imageElement = document.createElement("img")
-	imageElement.setAttribute("src",`${imageSource}`)
-	imageElement.setAttribute("class",`output`)
-	descriptionElement.innerText = fix_description(fixTitle)
 	output.appendChild(titleElement)
-	output.appendChild(descriptionElement)
-	output.appendChild(imageElement)
+	descripArray = fix_description(fixTitle).split(".")
+	descripArray.forEach(sentence =>{
+		newDescrip = document.createElement("p")
+		newDescrip.setAttribute("class","output")
+		newDescrip.innerText = sentence
+		imageSource = fix_image("nan")
+		imageElement = document.createElement("img")
+		imageElement.setAttribute("src",`${imageSource}`)
+		imageElement.setAttribute("class",`output`)
+
+		output.appendChild(newDescrip)
+		output.appendChild(imageElement)
+	})
+//	descriptionElement.innerText = descripArray[1]
+
+//	output.appendChild(imageElement)
 }
 
 function fix_description(fix) {
 	switch (fix){
 		case "Check the enviroment":
-			return "Is your dog happy with the environment he is living in? Is there fresh water always available? Is there a noise or strong smell that might be uncomfortable, is he able to get peace or are there always people, pets etc busying around, does he have a place to sleep that is comfortable and away from distractions, is the music in the house too loud, TV volume or surround sound? Is he eating a good diet the best you can afford that suits him. Is he allowed out to the toilet regularly, is he left alone for long periods of time regularly? Does he live with or near something that frightens him i.e. another pet or child, the dog next door? Does he have enough enrichment in his environment?          Is the temperature within his living area set too high or low? It maybe that more than one of these things is increasing your dog’s anxiety levels and you should try and make sure that all the needs of your dog are met in his environment."
+			return "Is your dog happy with the environment he is living in? Is there fresh water always available? Is there a noise or strong smell that might be uncomfortable, is he able to get peace or are there always people, pets etc busying around, does he have a place to sleep that is comfortable and away from distractions, is the music in the house too loud, TV volume or surround sound? Is he eating a good diet the best you can afford that suits him. Is he allowed out to the toilet regularly, is he left alone for long periods of time regularly? Does he live with or near something that frightens him ie another pet or child, the dog next door? Does he have enough enrichment in his environment?          Is the temperature within his living area set too high or low? It maybe that more than one of these things is increasing your dog’s anxiety levels and you should try and make sure that all the needs of your dog are met in his environment"
 			break;
 		case "Visit a behaviourist":
-			return "A canine behaviourist is someone who has trained to help dog guardians understand why their dog is behaving in the way it is. They will discuss the issues and do a lot of detective work to find out why your dog behaves the way it does. They will then suggest a programme for you and your dog and support you through it if necessary."
+			return "A canine behaviourist is someone who has trained to help dog guardians understand why their dog is behaving in the way it is. They will discuss the issues and do a lot of detective work to find out why your dog behaves the way it does. They will then suggest a programme for you and your dog and support you through it if necessary"
 		case "Check Routines":
-			return "Dog's live their lives with very little choice, they rely on us to know their needs and meet them. It is important that dogs have daily schedules rather than routines. Schedules mean that mostly you will get walked twice a day, but sometimes 9.30 sometimes 10, it will happen but not at a precise time.  It is important that the dog knows his needs will be met, but he should not be pinned down to a routine so that when he cannot be fed at 5 O’clock on the dot, he will not get frustrated or anxious. However, routines are important for puppies and new dogs as they acclimatise themselves to living with you. Routines for toilet and feed times etc will be useful, but you will gradually want to loosen them into structures rather than routines."
+			return "Dog's live their lives with very little choice, they rely on us to know their needs and meet them. It is important that dogs have daily schedules rather than routines. Schedules mean that mostly you will get walked twice a day, but sometimes 9-30 sometimes 10, it will happen but not at a precise time.  It is important that the dog knows his needs will be met, but he should not be pinned down to a routine so that when he cannot be fed at 5 O’clock on the dot, he will not get frustrated or anxious. However, routines are important for puppies and new dogs as they acclimatise themselves to living with you. Routines for toilet and feed times etc will be useful, but you will gradually want to loosen them into structures rather than routines"
 			break;
 		case "Consider Exercise":
-			return "It is important to understand your dog breed and allow them the amount of exercise that they require. Each breed is different, but do not assume that a small breed will need less than a large breed. Without an outlet for their energy and an opportunity to engage in their natural behaviours, they may become frustrated and bored.";
+			return "It is important to understand your dog breed and allow them the amount of exercise that they require. Each breed is different, but do not assume that a small breed will need less than a large breed. Without an outlet for their energy and an opportunity to engage in their natural behaviours, they may become frustrated and bored";
 			break;
 		case "Remove Cause":
 			return "See if you can remove whatever is causing the dog to be upset or it may maul a child"
@@ -167,9 +173,8 @@ function fix_image(fix){
 			return "imgs/dog-routine.jpg"
 			break;
 		default:
-			ranNum = Math.floor(Math.random()*3)
-			dogImages = ["imgs/dogs.jpg","imgs/bitingDog.jpg","imgs/dog-routine.jpg"]
-			return dogImages[ranNum]
+			ranNum = Math.floor(Math.random()*7)
+			return `imgs/dogs${ranNum}.jpeg`
 			break;
 	}	
 }
