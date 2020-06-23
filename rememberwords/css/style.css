@@ -70,7 +70,14 @@ aside button:focus{
     color:var(--clr-light);
     transform: scale(0.75);
 }
+#instructionsButtons{
+    background: var(--clr-accent1);
+    color:var(--clr-light);
+}
 
+#instructions {
+    margin:0;
+}
 #output {
     margin: 0;
     background: var(--clr-accent4);
