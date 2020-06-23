@@ -248,6 +248,7 @@ function get_line_text(lineNum){
     
     return sentence
     } else {
+        clear_output();
         return "You've Done It!"
     }
 
