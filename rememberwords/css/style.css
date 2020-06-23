@@ -89,6 +89,8 @@ aside button:focus{
 
 #output textarea{
     color: var(--clr-dark);
+    height:400px;
+    width:400px;
 }
 
 #footer {
