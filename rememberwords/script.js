@@ -26,6 +26,7 @@ function start_clicked(){
 }
 
 function fill_aside(fullWords){
+    fullWords=fullWords.replace(/(^\s+|\s+$)/g,'');
     fullWordsElement = document.getElementById("fullWords");
     fullWordsElement.innerText = fullWords
     asideElement = document.getElementById("aside")
@@ -164,12 +165,14 @@ function check_answer(lineNum){
 
     console.log(`Your Answer: ${answer}`)
     console.log(`Actual Answer: ${lineText}`)
+    heading = document.getElementById("header")
 
     if (answer == lineText){
-        console.log("Correct")
+        heading.style.background = "#1C3144"
         return true;
     } else {
         console.log("Wrong")
+        heading.style.background = "#70161E"
         return false;
     }
 
@@ -187,12 +190,15 @@ function check_up_to_line_answer(lineNum){
 
     console.log(`Your Answer: ${answer}`)
     console.log(`Actual Answer: ${lineText}`)
+    heading = document.getElementById("header")
 
     if (answer == lineText){
+        heading.style.background = "#1C3144"
         console.log("Correct")
         return true;
     } else {
         console.log("Wrong")
+        heading.style.background = "#70161E"
         return false;
     }
 
@@ -203,11 +209,20 @@ function get__up_to_line_text(lineNum){
     fullWords = fullWords.innerHTML;
     sentences = fullWords.split("<br>");
     newSentences = []
-    for (i=0;i<=lineNum;i++){
+    for (i=0;i<=lineNum;i++){   
+    while (sentences[i][0]===' '){
+        console.log(sentences[i])
+        sentences[i] = sentences[i].substr(1)
+    }
         newSentences.push(sentences[i])
     }
     newSentences = newSentences.join(" ")
     console.log(newSentences)
+    
+    while (sentence[0]===' '){
+        sentence = sentence.substr(1)
+    }
+
     return newSentences
 }
 
@@ -217,7 +232,6 @@ function get_line_text(lineNum){
     sentences = fullWords.split("<br>");
     //sentences = sentences.split(",").join(".");
     //sentences = sentences.split(".");
-    console.log(sentences)
     if(sentences[lineNum]){
         sentence = sentences[lineNum]
         while (sentence[0]===' '){
