@@ -49,6 +49,7 @@ function display_line(lineNum){
         backButton = document.createElement("button")
         backButton.setAttribute("class","output")
         backButton.innerText  = "Back"
+        backButton.setAttribute("onclick",`back_button_clicked(${lineNum})`)
         output.appendChild(backButton)
     }
     nextButton = document.createElement("button")
@@ -244,4 +245,9 @@ function get_line_text(lineNum){
     }
 
     
+}
+
+function back_button_clicked(lineNum){
+    display_line(lineNum-1)
+
 }

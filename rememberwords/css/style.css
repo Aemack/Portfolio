@@ -41,7 +41,8 @@ aside {
     top:10px;
     background: var(--clr-accent1);
     color: var(--clr-light);
-    box-shadow:var(--bs)
+    box-shadow:var(--bs);
+
 }
 
 aside button{
