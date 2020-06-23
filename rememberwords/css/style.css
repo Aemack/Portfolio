@@ -22,6 +22,11 @@
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
 }
 
+header {
+    background: var(--clr-accent4);
+    color:var(--clr-light);
+}
+
 /* Aside */
 
 aside {
@@ -29,7 +34,10 @@ aside {
     display: none;
     position: fixed;
     right:10px;
-    background: var(--clr-accent1)
+    top:10px;
+    background: var(--clr-accent1);
+    color: var(--clr-light);
+    box-shadow:var(--bs)
 }
 
 aside button{
