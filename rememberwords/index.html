@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/normalize.css">  
+        <link rel="stylesheet" href="css/skeleton.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        
+        <aside id="aside"> 
+            <button data-toggle="collapse" data-target="#fullWords">Show Words</button>
+            <p id="fullWords" class="collapse"></p>
+        </aside>
+        
+        <header id="header">
+            <h2 id="title">Remember the Words</h2>
+            <h4 id="subtitle">Paste in the words to remember</h4>
+        </header>
+        <nav></nav>
+
+        <div id="output">
+
+        <div id="main">
+
+            <textarea id="inputBox" class="output"></textarea>
+            <br/>
+
+        </div>
+        <nav id="subnav">
+
+                <button onclick="start_clicked()" id="start" class="output" type="button">Start!</button>
+
+        </nav>
+    </div>
+        
+
+        <script src="script.js"></script>
+    </body>
+</html>

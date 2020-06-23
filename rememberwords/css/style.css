@@ -1,0 +1,66 @@
+/*Custom Properties*/
+:root {
+    --ff-primary: 'Spource Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 400;
+    --fw-bold: 900;
+
+    --clr-light: #fbf5f3;
+    --clr-dark: #0F0E0E;
+    --clr-accent1:#70161E;
+    --clr-accent2: #7EA16B;
+    --clr-accent3: #596F62;
+    --clr-accent4: #1C3144; 
+
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.15rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
+}
+
+/* Aside */
+
+aside {
+    text-align: center;
+    display: none;
+    position: fixed;
+    right:10px;
+    background: var(--clr-accent1)
+}
+
+aside button{
+    background: var(--clr-accent4);
+    color: var(--clr-light)
+}
+
+aside button:focus{
+    background: var(--clr-accent3);
+    color: var(--clr-light)
+}
+
+/* Main */
+
+
+#main, #subnav {
+    text-align: center;
+    width: 80%;
+}
+
+
+#output {
+    background: var(--clr-accent4);
+    color: var(--clr-light)
+}
+
+#output button {
+    background: var(--clr-accent3);
+    color: var(--clr-light);
+}
+
+#output textarea{
+    color: var(--clr-dark)
+}

@@ -52,7 +52,7 @@ function display_fix_options(cause){
 			fixOptions=["Vet Approved Hormone Treatment","Spay","Consider Calming Diffuser","Consider a Safe Haven"]
 			break;
 		case "Puppy Biting":
-			fixOptions=["Puppy Training Classes","Remove Interaction","Distract and Reward","Mutually Exclusive Behaviour","Consider Enough Rest","Consider Calming Protocols","Consider a Safe Haven","Spay"]
+			fixOptions=["Puppy Training Classes","Remove Interaction","Distract and Reward","Mutually Exclusive Behaviour","Consider Enough Rest","Calming Protocols","Consider a Safe Haven","Spay"]
 			break;
 		case "Redirected Aggression":
 			fixOptions = ["Visit a Behaviourist"]

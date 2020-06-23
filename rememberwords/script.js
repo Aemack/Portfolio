@@ -1,0 +1,235 @@
+function clear_output(){
+    outputList = document.getElementById("main").querySelectorAll(".output")
+    outputList.forEach((elem) => {
+        elem.remove();
+    })
+
+    outputList = document.getElementById("subnav").querySelectorAll(".output")
+    outputList.forEach((elem) => {
+        elem.remove();
+    })
+
+}
+
+function start_clicked(){
+    nav= document.getElementById("nav")
+
+    inputElement = document.getElementById("inputBox")
+    startButton = document.getElementById("start")
+    fullWords= inputElement.value;
+    fill_aside(fullWords);
+    inputElement.remove();
+    startButton.remove();
+    display_line(0);
+
+
+}
+
+function fill_aside(fullWords){
+    fullWordsElement = document.getElementById("fullWords");
+    fullWordsElement.innerText = fullWords
+    asideElement = document.getElementById("aside")
+    asideElement.style.display = "block";
+}
+
+function display_line(lineNum){
+    aside = document.getElementById("aside")
+    aside.style.display="block"
+    clear_output();
+    subtitle = document.getElementById("subtitle")
+    subtitle.innerText = `You're on line ${lineNum+1}`
+    lineText = get_line_text(lineNum)
+    output = document.getElementById("main");
+    newLine = document.createElement("h5");
+    newLine.setAttribute("class","output")
+    newLine.innerText = lineText
+    output.appendChild(newLine )
+    if (lineNum !== 0){
+        backButton = document.createElement("button")
+        backButton.setAttribute("class","output")
+        backButton.innerText  = "Back"
+        output.appendChild(backButton)
+    }
+    nextButton = document.createElement("button")
+    nextButton.setAttribute("onclick",`ask_for_line(${lineNum})`)
+    nextButton.innerText = "Next"
+    nextButton.setAttribute("class","output")
+    output.appendChild(nextButton)
+}
+
+function display_up_to_line(lineNum){
+    aside = document.getElementById("aside")
+    aside.style.display="block"
+    clear_output();
+    subtitle = document.getElementById("subtitle")
+    subtitle.innerText = `All together now!`
+
+    output = document.getElementById("main");    
+    for (i=0;i<=lineNum;i++){
+        lineText = get_line_text(i)
+        newLine = document.createElement("h5");
+        newLine.setAttribute("class","output")
+        newLine.innerText = lineText
+        output.appendChild(newLine);
+    }
+    
+    backButton = document.createElement("button")
+    backButton.setAttribute("class","output")
+    backButton.innerText  = "Back"
+    output.appendChild(backButton)
+    nextButton = document.createElement("button")
+    nextButton.setAttribute("onclick",`ask_for_up_to_line(${lineNum})`)
+    nextButton.innerText = "Next"
+    nextButton.setAttribute("class","output")
+    output.appendChild(nextButton)
+}
+
+
+function ask_for_line(lineNum){
+    clear_output()
+    aside = document.getElementById("aside");
+    aside.style.display="none";
+
+    output = document.getElementById("main");
+    outputButtons = document.getElementById("subnav");
+    newInput = document.createElement("textarea");
+    newInput.setAttribute("class","output");
+    newInput.setAttribute("id","answer");
+    newButton = document.createElement("button");
+    newButton.setAttribute("class","output")
+    newButton.setAttribute("onclick",`next_line_clicked(${lineNum})`)
+    newButton.innerText = "Submit"
+    output.appendChild(newInput);
+    outputButtons.appendChild(newButton);
+}
+
+function ask_for_up_to_line(lineNum){
+    clear_output()
+    aside = document.getElementById("aside");
+    aside.style.display="none";
+
+    output = document.getElementById("main");
+    outputButtons = document.getElementById("subnav");
+    newInput = document.createElement("textarea");
+    newInput.setAttribute("class","output");
+    newInput.setAttribute("id","answer");
+    newButton = document.createElement("button");
+    newButton.setAttribute("class","output")
+    newButton.setAttribute("onclick",`next_up_to_line_clicked(${lineNum})`)
+    newButton.innerText = "Submit"
+    output.appendChild(newInput);
+    outputButtons.appendChild(newButton);
+}
+
+function next_line_clicked(lineNum){
+    answerCorrect = check_answer(lineNum);
+    if (answerCorrect){
+        if(lineNum==0){
+            lineNum = lineNum+1
+            display_line(lineNum)
+        } else {
+        display_up_to_line(lineNum)
+        }
+        console.log("correct")
+    } else {
+        if (lineNum !== 0){
+            lineNum = lineNum - 1
+        }
+        display_line(lineNum);
+        console.log("wrong")
+    }
+}
+
+function next_up_to_line_clicked(lineNum){
+    answerCorrect = check_up_to_line_answer(lineNum);
+    if (answerCorrect){
+        lineNum = lineNum+1
+        display_line(lineNum)
+        console.log("correct")
+    } else {
+        if (lineNum !== 0){
+            lineNum = lineNum - 1
+        }
+        display_line(lineNum);
+        console.log("wrong")
+    }
+}
+
+
+function check_answer(lineNum){
+    answer = document.getElementById("answer").value
+    answer = answer.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+    answer = answer.toLowerCase();
+    lineText = get_line_text(lineNum);
+    lineText = lineText.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+    lineText = lineText.toLowerCase()
+
+    console.log(`Your Answer: ${answer}`)
+    console.log(`Actual Answer: ${lineText}`)
+
+    if (answer == lineText){
+        console.log("Correct")
+        return true;
+    } else {
+        console.log("Wrong")
+        return false;
+    }
+
+}
+
+function check_up_to_line_answer(lineNum){
+    answer = document.getElementById("answer")
+    answer = answer.value.split("\n").join(" ");
+    answer = answer.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+    answer = answer.toLowerCase();
+    lineText = get__up_to_line_text(lineNum);
+    lineText = lineText.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+    lineText = lineText.toLowerCase()
+    
+
+    console.log(`Your Answer: ${answer}`)
+    console.log(`Actual Answer: ${lineText}`)
+
+    if (answer == lineText){
+        console.log("Correct")
+        return true;
+    } else {
+        console.log("Wrong")
+        return false;
+    }
+
+}
+
+function get__up_to_line_text(lineNum){
+    fullWords = document.getElementById("fullWords");
+    fullWords = fullWords.innerHTML;
+    sentences = fullWords.split("<br>");
+    newSentences = []
+    for (i=0;i<=lineNum;i++){
+        newSentences.push(sentences[i])
+    }
+    newSentences = newSentences.join(" ")
+    console.log(newSentences)
+    return newSentences
+}
+
+function get_line_text(lineNum){
+    fullWords = document.getElementById("fullWords");
+    fullWords = fullWords.innerHTML;
+    sentences = fullWords.split("<br>");
+    //sentences = sentences.split(",").join(".");
+    //sentences = sentences.split(".");
+    console.log(sentences)
+    if(sentences[lineNum]){
+        sentence = sentences[lineNum]
+        while (sentence[0]===' '){
+            sentence = sentence.substr(1)
+        }
+    
+    return sentence
+    } else {
+        return "You've Done It!"
+    }
+
+    
+}
