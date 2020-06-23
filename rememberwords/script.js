@@ -17,12 +17,21 @@ function start_clicked(){
     inputElement = document.getElementById("inputBox")
     startButton = document.getElementById("start")
     resetButtons = document.getElementById("resetButtons")
+
     resetButton = document.createElement("button")
     resetButton.setAttribute("onclick","reset_button_clicked()")
     resetButton.setAttribute("id","reset")
     resetButton.setAttribute("class","output")
     resetButton.innerText = "Reset"
+
+    newWords = document.createElement("button");
+    newWords.setAttribute("onclick","new_words()");
+    newWords.setAttribute("id","newWords");
+    newWords.setAttribute("class","output");
+    newWords.innerText = "New Words";
+
     resetButtons.appendChild(resetButton)
+    resetButtons.appendChild(newWords)
     fullWords= inputElement.value;
     fill_aside(fullWords);
     inputElement.remove();
@@ -261,4 +270,35 @@ function back_button_clicked(lineNum){
 
 function reset_button_clicked(){
     display_line(0)
+}
+
+function new_words(){
+    clear_output()
+    aside = document.getElementById("aside");
+    aside.style.display="none";
+
+    subtitle = document.getElementById("subtitle");
+    subtitle.innerText = ""
+    
+    resetButton = document.getElementById("reset");
+    newWords = document.getElementById("newWords");
+    reset.remove();
+    newWords.remove();
+
+
+    main = document.getElementById("main");
+    textArea = document.createElement("textarea");
+    textArea.setAttribute("id","inputBox");
+    textArea.setAttribute("class","output");
+    textArea.setAttribute("placeholder","Paste Text Here!");
+    main.appendChild(textArea);
+
+    subnav = document.getElementById("subnav");
+    startButton = document.createElement("button");
+    startButton.setAttribute("onclick","start_clicked()");
+    startButton.setAttribute("id","start");
+    startButton.setAttribute("class","output");
+    startButton.innerText = "Start!";
+    subnav.appendChild(startButton);
+
 }

@@ -45,6 +45,7 @@ aside {
     background: var(--clr-accent1);
     color: var(--clr-light);
     box-shadow:var(--bs);
+    opacity: 0.9;
 
 }
 
