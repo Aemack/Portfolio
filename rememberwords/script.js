@@ -12,10 +12,17 @@ function clear_output(){
 }
 
 function start_clicked(){
-    nav= document.getElementById("nav")
+    
 
     inputElement = document.getElementById("inputBox")
     startButton = document.getElementById("start")
+    resetButtons = document.getElementById("resetButtons")
+    resetButton = document.createElement("button")
+    resetButton.setAttribute("onclick","reset_button_clicked()")
+    resetButton.setAttribute("id","reset")
+    resetButton.setAttribute("class","output")
+    resetButton.innerText = "Reset"
+    resetButtons.appendChild(resetButton)
     fullWords= inputElement.value;
     fill_aside(fullWords);
     inputElement.remove();
@@ -248,6 +255,9 @@ function get_line_text(lineNum){
 }
 
 function back_button_clicked(lineNum){
-    display_line(lineNum-1)
+    display_line(lineNum-1);
+}
 
+function reset_button_clicked(){
+    display_line(0)
 }

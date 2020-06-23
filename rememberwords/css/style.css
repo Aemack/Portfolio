@@ -58,11 +58,14 @@ aside button:focus{
 /* Main */
 
 
-#main, #subnav {
+#main, #subnav, #resetButtons{
     text-align: center;
-    width: 80%;
 }
 
+#resetButtons button {
+    background: var(--clr-accent2);
+    transform: scale(0.75);
+}
 
 #output {
     margin: 0;
@@ -70,12 +73,21 @@ aside button:focus{
     color: var(--clr-light)
 }
 
-#output button {
+#main button {
     background: var(--clr-accent3);
     color: var(--clr-light);
 }
 
+#subnav button {
+    background: var(--clr-accent1);
+}
+
 #output textarea{
     color: var(--clr-dark);
-    width:70%;
+}
+
+@media(max-width:500px){
+    #aside{
+        opacity:0;
+    }
 }
