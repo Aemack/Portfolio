@@ -26,6 +26,10 @@ header {
     background: var(--clr-accent4);
     color:var(--clr-light);
 }
+#title, #subtitle {
+    margin: 0;
+}
+
 
 /* Aside */
 
@@ -60,6 +64,7 @@ aside button:focus{
 
 
 #output {
+    margin: 0;
     background: var(--clr-accent4);
     color: var(--clr-light)
 }
@@ -70,5 +75,6 @@ aside button:focus{
 }
 
 #output textarea{
-    color: var(--clr-dark)
+    color: var(--clr-dark);
+    width:70%;
 }

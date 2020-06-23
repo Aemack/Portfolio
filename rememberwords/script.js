@@ -84,7 +84,6 @@ function display_up_to_line(lineNum){
     output.appendChild(nextButton)
 }
 
-
 function ask_for_line(lineNum){
     clear_output()
     aside = document.getElementById("aside");
@@ -154,7 +153,6 @@ function next_up_to_line_clicked(lineNum){
         console.log("wrong")
     }
 }
-
 
 function check_answer(lineNum){
     answer = document.getElementById("answer").value
