@@ -1,3 +1,39 @@
+// For speech recognition
+
+var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+var message = document.querySelector('#message')
+
+var grammer = "#JSGF V1.0";
+
+var recognition = new SpeechRecognition();
+var speechRecognitionGrammerList = new SpeechGrammarList();
+
+speechRecognitionGrammerList.addFromString(grammer,1);
+
+recognition.grammers = speechRecognitionGrammerList;
+recognition.lang = 'en-US';
+recognition.interimResults = false;
+
+
+recognition.onresult = function(event) {
+    var last = event.results.length -1;
+    var command = event.results[last][0].transcript;
+    answer = document.getElementById("answer");
+    answer.innerText = command;
+}
+
+recognition.onspeechend = function() {
+    recognition.stop();
+}
+
+recognition.onerror = function(event) {
+    message.textContent = 'Error occured in recognition: '+ event.error;
+}
+
+
+
+
 function clear_output(){
     outputList = document.getElementById("main").querySelectorAll(".output")
     outputList.forEach((elem) => {
@@ -112,11 +148,16 @@ function ask_for_line(lineNum){
     newInput = document.createElement("textarea");
     newInput.setAttribute("class","output");
     newInput.setAttribute("id","answer");
+    voiceButton = document.createElement("button");
+    voiceButton.setAttribute("class","output");
+    voiceButton.setAttribute("onclick","recognition.start()")
+    voiceButton.innerText = "Voice";
     newButton = document.createElement("button");
     newButton.setAttribute("class","output")
     newButton.setAttribute("onclick",`next_line_clicked(${lineNum})`)
     newButton.innerText = "Submit"
     output.appendChild(newInput);
+    outputButtons.appendChild(voiceButton);
     outputButtons.appendChild(newButton);
 }
 
@@ -300,5 +341,9 @@ function new_words(){
     startButton.setAttribute("class","output");
     startButton.innerText = "Start!";
     subnav.appendChild(startButton);
+
+}
+
+function start_listening(){
 
 }
