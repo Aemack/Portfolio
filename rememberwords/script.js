@@ -216,9 +216,11 @@ function next_up_to_line_clicked(lineNum){
 function check_answer(lineNum){
     answer = document.getElementById("answer").value
     answer = answer.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+    answer = answer.replace(/\s/g,'');
     answer = answer.toLowerCase();
     lineText = get_line_text(lineNum);
     lineText = lineText.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+    lineText = lineText.replace(/\s/g,'');
     lineText = lineText.toLowerCase()
 
     console.log(`Your Answer: ${answer}`)
@@ -240,9 +242,11 @@ function check_up_to_line_answer(lineNum){
     answer = document.getElementById("answer")
     answer = answer.value.split("\n").join(" ");
     answer = answer.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+    answer = answer.replace(/\s/g,'');
     answer = answer.toLowerCase();
     lineText = get__up_to_line_text(lineNum);
     lineText = lineText.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+    lineText = lineText.replace(/\s/g,'');
     lineText = lineText.toLowerCase()
     
 
@@ -288,8 +292,6 @@ function get_line_text(lineNum){
     fullWords = document.getElementById("fullWords");
     fullWords = fullWords.innerHTML;
     sentences = fullWords.split("<br>");
-    //sentences = sentences.split(",").join(".");
-    //sentences = sentences.split(".");
     if(sentences[lineNum]){
         sentence = sentences[lineNum]
         while (sentence[0]===' '){
@@ -299,6 +301,7 @@ function get_line_text(lineNum){
     return sentence
     } else {
         clear_output();
+        
         return "You've Done It!"
     }
 
