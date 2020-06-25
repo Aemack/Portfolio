@@ -53,7 +53,7 @@ function start_clicked(){
     inputElement = document.getElementById("inputBox")
     startButton = document.getElementById("start")
     resetButtons = document.getElementById("resetButtons")
-
+    hide_buttons();
     resetButton = document.createElement("button")
     resetButton.setAttribute("onclick","reset_button_clicked()")
     resetButton.setAttribute("id","reset")
@@ -75,6 +75,13 @@ function start_clicked(){
     display_line(0);
 
 
+}
+
+function hide_buttons(){
+    outputList = document.getElementById("header").querySelectorAll(".output")
+    outputList.forEach((elem) => {
+        elem.remove();
+    })
 }
 
 function fill_aside(fullWords){
@@ -175,7 +182,14 @@ function ask_for_up_to_line(lineNum){
     newButton.setAttribute("class","output")
     newButton.setAttribute("onclick",`next_up_to_line_clicked(${lineNum})`)
     newButton.innerText = "Submit"
+    
+    voiceButton = document.createElement("button");
+    voiceButton.setAttribute("class","output");
+    voiceButton.setAttribute("onclick","recognition.start()")
+    voiceButton.innerText = "Voice";
+
     output.appendChild(newInput);
+    outputButtons.appendChild(voiceButton);
     outputButtons.appendChild(newButton);
 }
 
@@ -239,8 +253,7 @@ function check_answer(lineNum){
 }
 
 function check_up_to_line_answer(lineNum){
-    answer = document.getElementById("answer")
-    answer = answer.value.split("\n").join(" ");
+    answer = document.getElementById("answer").value;
     answer = answer.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
     answer = answer.replace(/\s/g,'');
     answer = answer.toLowerCase();
@@ -347,6 +360,7 @@ function new_words(){
 
 }
 
-function start_listening(){
-
+function paste_ozymandias() {
+    copyText = document.getElementById("examplePoem").innerText;
+    document.getElementById("inputBox").value = copyText;
 }

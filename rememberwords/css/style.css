@@ -71,13 +71,17 @@ aside button:focus{
     color:var(--clr-light);
     transform: scale(0.75);
 }
-#instructionsButtons{
+#exampleButtons, #instructionsButtons, #copyButton{
     background: var(--clr-accent1);
     color:var(--clr-light);
 }
 
-#instructions {
+#instructions, #example {
     margin:0;
+} 
+
+#instructions{
+    text-align: center;
 }
 #output {
     margin: 0;
