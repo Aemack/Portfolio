@@ -170,7 +170,7 @@ function fix_description(fix) {
 		case "Consider a Sport":
 			return "Allowing your dog to have an outlet for their natural instincts can be hard, but if you join a club this can sometimes be easier. Train a gun dog to the gun (reward based training only, working dogs are no different to pet dogs and should be trained along the same principles, actual hunting and killing is not necessary) Train agility, most dogs love this activity, just make sure you get correct training so you do not damage your dog’s limbs. Scent work, all dogs love using their nose and most can be taught to do this extremely well. There are great competitions that can be done. Man-trailing is also a sport that your dog might enjoy. Have a look for anything that you think you and your dog might enjoy, just remember it is about both you and your dog"
 			break;
-		case "Esablish a Trigger":
+		case "Establish Trigger":
 			return "Observe your dog carefully and establish the potential triggers for the behaviour. There is often more than one. Make a note of what happens just before and just after an “event”. Look at ways that you might remove the triggers, desensitise the dog to them or counter-condition. A behaviourist can help with this"
 			break;
 		case "Stress Bucket":
