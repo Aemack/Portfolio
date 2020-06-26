@@ -28,11 +28,9 @@ recognition.onspeechend = function() {
 }
 
 recognition.onerror = function(event) {
-    message.textContent = 'Error occured in recognition: '+ event.error;
+    answer = document.getElementById("answer");
+    answer.innerText = "Error attempting voice recognition";
 }
-
-
-
 
 function clear_output(){
     outputList = document.getElementById("main").querySelectorAll(".output")

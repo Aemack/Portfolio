@@ -169,6 +169,13 @@ function fix_description(fix) {
 			break;
 		case "Consider a Sport":
 			return "Allowing your dog to have an outlet for their natural instincts can be hard, but if you join a club this can sometimes be easier. Train a gun dog to the gun (reward based training only, working dogs are no different to pet dogs and should be trained along the same principles, actual hunting and killing is not necessary) Train agility, most dogs love this activity, just make sure you get correct training so you do not damage your dog’s limbs. Scent work, all dogs love using their nose and most can be taught to do this extremely well. There are great competitions that can be done. Man-trailing is also a sport that your dog might enjoy. Have a look for anything that you think you and your dog might enjoy, just remember it is about both you and your dog"
+			break;
+		case "Esablish a Trigger":
+			return "Observe your dog carefully and establish the potential triggers for the behaviour. There is often more than one. Make a note of what happens just before and just after an “event”. Look at ways that you might remove the triggers, desensitise the dog to them or counter-condition. A behaviourist can help with this"
+			break;
+		case "Stress Bucket":
+			return "Dogs add either good stress or bad stress to their “stress bucket”. Either way, high stress levels are not good for them and so we need to work at “calming” to bring those stress levels down. Examples might be: dog gets out to toilet in the morning and chases the cat, (excitement and arousal), you recall him in and he is slow to come and you shout at him (negative stress ), the children come down and start to play raggy with him, (excitement and arousal), you get annoyed and shout at him and put him out of the room, (negative stress), whilst he is in the room on his own the door bell goes, (excited arousal and poss anxiety), you take him out for walk and the first dog who he sees he barks and lunges at. The previous stresses are stress sacks, the dog needed to empty the bucket of some stress before he went out. A calm chew time, sprinkle kibble in the grass etc. See calmness protocal"
+			break;
 		case "Spay":
 			return "Make it have babies no more"
 			break;
