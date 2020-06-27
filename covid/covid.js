@@ -52,7 +52,7 @@ function clear_rangeNav() {
 function destroy_chart(){
     container = document.getElementById("container")
     chart =document.getElementById("myChart")
-    container.style.height="400px"   
+    container.style.height="500px"   
     chart.remove();
     newChart = document.createElement("canvas")
     newChart.setAttribute("id","myChart")
@@ -90,25 +90,12 @@ function current_country_clicked(){
     subnav = document.createElement("div")
     subnav.setAttribute("id","subnav")
     menu.appendChild(subnav)
-    search=document.createElement("input")
-    search.setAttribute("type","text")
-    search.setAttribute("id","country")
-    search.setAttribute("class","navbar subnavbar")
-    search.setAttribute("placeholder","Country") 
-
-    searchButton = document.createElement("button")
-    searchButton.setAttribute("onclick","country_clicked()")
-    searchButton.setAttribute("id","countryButton")
-    searchButton.setAttribute("class","navbar subnavbar")
-    searchButton.innerHTML= "Search Country"
-
-    subnav.appendChild(search)
-    subnav.appendChild(searchButton)
+    create_other_range();
 }
 
 function country_clicked() {
-    clear_output()
-    country = document.getElementById("country").value;
+    clear_page()
+    country = document.getElementById("countries").value;
     try{
     fetch(`https://api.covid19api.com/total/country/${country}`)
     .then(function (resp) { return resp.json()})
@@ -288,6 +275,42 @@ function create_select(){
         create_range(countryName)})
         
 }
+
+function create_other_range(){
+    
+    navbar = document.getElementById("navigation")
+    
+    newDiv = document.createElement("div")
+    newDiv.setAttribute("id","subnav")
+    navbar.appendChild(newDiv)
+
+    selectCountry = document.createElement("select")
+    selectCountry.setAttribute("name","countries")
+    selectCountry.setAttribute("id","countries")
+    selectCountry.setAttribute("class","subnav")
+    
+    
+    newDiv.appendChild(selectCountry)
+    fetch(`https://api.covid19api.com/summary`)
+    .then(function (resp) { return resp.json() })
+    .then(function (data){
+        data.Countries.forEach(country=>{
+            console.log(data)
+            newOption = document.createElement("option")
+            newOption.setAttribute("value",country.Slug)
+            newOption.setAttribute("class","subnav")
+            newOption.innerHTML = country.Slug
+            selectCountry.appendChild(newOption)
+        })
+        
+        return
+    }).then(data => {
+        selectOption = document.getElementById("countries")
+        countryName = selectOption.value
+
+        selectOption.setAttribute("onchange",`country_clicked()`)
+}
+)}
 
 function create_range(){
     clear_rangeNav()
