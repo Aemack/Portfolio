@@ -1,0 +1,44 @@
+/*Custom Properties*/
+:root {
+    --ff-primary: 'Spource Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 400;
+    --fw-bold: 900;
+
+    --clr-light: #fbf5f3;
+    --clr-dark: #0F0E0E;
+    --clr-accent1:#70161E;
+    --clr-accent2: #7EA16B;
+    --clr-accent3: #596F62;
+    --clr-accent4: #1C3144; 
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
+}
+
+#header {
+        background : var(--clr-accent4);
+        color: var(--clr-light);
+}
+
+#promptContainer {
+    text-align: center;
+}
+
+#promptMe {
+    background: var(--clr-accent1);
+    color:var(--clr-light)
+}
+
+#promptMe:hover {
+    background: var(--clr-accent2);
+    color:var(--clr-light)
+}
+
+#prompt{
+    margin: auto;
+    background: var(--clr-accent4);
+    color:var(--clr-light);
+    width: 80%;
+    box-shadow: var(--bs);
+}
