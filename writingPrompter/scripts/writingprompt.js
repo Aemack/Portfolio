@@ -8,7 +8,7 @@ function promptMe_clicked(){
         wprompt = data.data.children[ranNum].data.title
         console.log(wprompt)
         wtype = wprompt.substring(0,4);
-        if (wprompt.startsWith("[WP]")){
+        if ((wprompt.startsWith("[WP]") || wprompt.startsWith("[EU]"))){
             wprompt = wprompt.substring(4)
             output = document.getElementById("prompt")
             output.innerText = wprompt
