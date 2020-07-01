@@ -180,7 +180,7 @@ function fix_description(fix) {
 			return "A qualified behaviourist can help you with desensitising your dog gently to whatever is frightening him or causing him anxiety"
 			break;
 		case "Visit a Vet":
-			return "If you are concerned that your dog’s behaviour has changed suddenly and you do not know why, make your first stop the vets. Have a chat with your vet and explain his sudden change in behaviour. Sudden behaviour changes often have pain or illness at their root":
+			return "If you are concerned that your dog’s behaviour has changed suddenly and you do not know why, make your first stop the vets. Have a chat with your vet and explain his sudden change in behaviour. Sudden behaviour changes often have pain or illness at their root";
 			break;
 		case "Counter-Conditioning":
 			return "A qualified behaviourist can help with this. We help your dog make positive associations with the fear trigger and so change the brain chemistry around seeing the trigger";
