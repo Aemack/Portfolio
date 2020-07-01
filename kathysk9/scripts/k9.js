@@ -176,6 +176,18 @@ function fix_description(fix) {
 		case "Stress Bucket":
 			return "Dogs add either good stress or bad stress to their “stress bucket”. Either way, high stress levels are not good for them and so we need to work at “calming” to bring those stress levels down. Examples might be: dog gets out to toilet in the morning and chases the cat, (excitement and arousal), you recall him in and he is slow to come and you shout at him (negative stress ), the children come down and start to play raggy with him, (excitement and arousal), you get annoyed and shout at him and put him out of the room, (negative stress), whilst he is in the room on his own the door bell goes, (excited arousal and poss anxiety), you take him out for walk and the first dog who he sees he barks and lunges at. The previous stresses are stress sacks, the dog needed to empty the bucket of some stress before he went out. A calm chew time, sprinkle kibble in the grass etc. See calmness protocal"
 			break;
+		case "Desensitise to Trigger":
+			return "A qualified behaviourist can help you with desensitising your dog gently to whatever is frightening him or causing him anxiety"
+			break;
+		case "Visit a Vet":
+			return "If you are concerned that your dog’s behaviour has changed suddenly and you do not know why, make your first stop the vets. Have a chat with your vet and explain his sudden change in behaviour. Sudden behaviour changes often have pain or illness at their root":
+			break;
+		case "Counter-Conditioning":
+			return "A qualified behaviourist can help with this. We help your dog make positive associations with the fear trigger and so change the brain chemistry around seeing the trigger";
+			break;
+		case "Teach Calming Protocol":
+			return "Teach your dog how to be calm, activities such as chewing, sleeping, sniffing, and massage, can all be used to lower a dog’s stress / arousal levels. Asking your dog to find 10 small hidden treats before you go for a walk, will help him to go out in a less aroused state";
+			break;
 		case "Spay":
 			return "Make it have babies no more"
 			break;
