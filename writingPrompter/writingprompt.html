@@ -7,16 +7,27 @@
         <link rel="stylesheet" type="text/css" href="css/writingprompt.css">
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <script src="scripts/writingprompt.js"></script>
     </head>
 
     <body>
         <header id="header">
             <h1 id="title">Writing Prompter</h1>
         </header>
+        
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="https://aemack.github.io/Portfolio/characterCreator/characterCreator.html" class="nav__link">Character Creator</a></li>
+            </ul>
+        </nav>
+
         <div id="promptContainer">
             <button onclick="promptMe_clicked()" id="promptMe">Prompt Me!</button>
             <h4 id=prompt></h4>
         </div>
+        
+        <script src="scripts/writingprompt.js"></script>
     </body>
 </html>
