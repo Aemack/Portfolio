@@ -1,0 +1,71 @@
+/*Custom Properties*/
+:root {
+    --ff-primary: 'Spource Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 400;
+    --fw-bold: 900;
+
+    --clr-light: #fbf5f3;
+    --clr-dark: #0F0E0E;
+    --clr-accent1:#70161E;
+    --clr-accent2: #7EA16B;
+    --clr-accent3: #596F62;
+    --clr-accent4: #1C3144; 
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: auto;
+}
+
+body {
+    background: var(--clr-accent4);
+}
+
+
+header{
+        text-align: center;
+        color: var(--clr-light);
+        margin:0;
+}
+ 
+#output{
+    background: var(--clr-accent3);
+    margin: 10px
+}
+
+#navbar{
+    background: var(--clr-accent4);
+    text-align: center;
+    margin: 0;
+}
+#navbar button{
+    background: var(--clr-accent1);
+    color:var(--clr-light);
+}
+
+img {
+    width:50%;
+    position: absolute;
+    right: 100px;
+    top:200px;
+}
+
+@media(max-width: 800px){
+    #output{
+        text-align: center;
+    }
+    img{
+        display: block;
+        top:0;
+        position: relative;
+    }
+}
