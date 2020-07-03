@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Monster Maker</title>
+        <title>Quoter</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css/monsterMaker.css">
+        <link rel="stylesheet" type="text/css" href="css/quoter.css">
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/skeleton.css">
     </head>
 
     <body>
         <header id="header">
-            <h1 id="title">Monster Maker</h1>
+            <h1 id="title">Quoter</h1>
         </header>
         
         <button class="nav-toggle" aria-label="toggle navigation">
@@ -21,18 +21,16 @@
             <ul class="nav__list">
                 <li class="nav__item"><a href="https://aemack.github.io/Portfolio/characterCreator/characterCreator.html" class="nav__link">Character Creator</a></li>
                 <li class="nav__item"><a href="https://aemack.github.io/Portfolio/writingPrompter/writingprompt.html" class="nav__link">Writing Prompter</a></li>
-                <li class="nav__item"><a href="https://aemack.github.io/Portfolio/quoter/quoter.html" class="nav__link">Quoter</a></li>
+                <li class="nav__item"><a href="https://aemack.github.io/Portfolio/monsterMaker/monsterMaker.html" class="nav__link">Writing Prompter</a></li>
             </ul>
         </nav>
 
         <div id="mainContainer">
-            <button onclick="behemoths_clicked()" id="makeButton">Behemoths</button>
-            <button onclick="leviathans_clicked()" id="makeButton">Leviathans</button>
+            <button onclick="generate_clicked()" id="makeButton">Generate Quote</button>
             <br>
-            <h4 id="monsterDescription"></h4>
-            <img id="monsterImage">
+            <h2 id="quote" class="output"></h2>
         </div>
         
-        <script src="scripts/monsterMaker.js"></script>
+        <script src="quoter.js"></script>
     </body>
 </html>

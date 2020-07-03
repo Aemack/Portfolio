@@ -12,7 +12,22 @@ navLinks.forEach(link => {
     })
 })
 
-function make_monster_clicked(){
+function leviathans_clicked(){
+    
+    fetch("https://www.reddit.com/r/ImaginaryLeviathans/hot.json")
+    .then( function (resp) {return resp.json()} )
+    .then(function (data) { 
+        randNum= Math.floor(Math.random()*25)
+        imageUrl = data.data.children[randNum].data.url;
+        monsterTitle = data.data.children[randNum].data.title;
+        document.getElementById("monsterImage").src=imageUrl;
+        document.getElementById("monsterDescription").innerText=monsterTitle;
+        
+    }) 
+}
+
+
+function behemoths_clicked(){
     
     fetch("https://www.reddit.com/r/ImaginaryBehemoths/hot.json")
     .then( function (resp) {return resp.json()} )
