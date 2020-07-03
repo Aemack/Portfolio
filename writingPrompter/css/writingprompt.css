@@ -8,10 +8,10 @@
 
     --clr-light: #fbf5f3;
     --clr-dark: #0F0E0E;
-    --clr-accent1:#70161E;
-    --clr-accent2: #7EA16B;
-    --clr-accent3: #596F62;
-    --clr-accent4: #1C3144; 
+    --clr-accent1:#D2D0BA;
+    --clr-accent2: #B6BE9C;
+    --clr-accent3: #b59194;
+    --clr-accent4: #5E747F; 
 
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),0.25em 0.25em 0.75em rgba(0,0,0,.55);
 }
@@ -136,6 +136,16 @@
     text-align: center;
 }
 
+#title:after{
+    content:"";
+    background: var(--clr-accent3);
+    width:80%;
+    height:1px;
+    display: block;
+    margin:auto;
+    opacity:0.5;
+}
+
 
 #promptContainer {
     text-align: center;
@@ -143,7 +153,7 @@
 
 #promptMe {
     background: var(--clr-accent1);
-    color:var(--clr-light)
+    color:var(--clr-dark)
 }
 
 #promptMe:hover {
@@ -151,9 +161,13 @@
     color:var(--clr-light)
 }
 
+body {
+    background: var(--clr-accent4);
+}
+
 #prompt{
     margin: auto;
-    background: var(--clr-accent4);
+    background: var(--clr-accent3);
     color:var(--clr-light);
     width: 80%;
     box-shadow: var(--bs);
