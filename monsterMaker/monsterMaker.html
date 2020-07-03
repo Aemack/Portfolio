@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Monster Maker</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/monsterMaker.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+    </head>
+
+    <body>
+        <header id="header">
+            <h1 id="title">Monster Maker</h1>
+        </header>
+        
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="https://aemack.github.io/Portfolio/characterCreator/characterCreator.html" class="nav__link">Character Creator</a></li>
+                <li class="nav__item"><a href="https://aemack.github.io/Portfolio/writingPrompter/writingprompt.html" class="nav__link">Writing Prompter</a></li>
+            </ul>
+        </nav>
+
+        <div id="mainContainer">
+            <button onclick="make_monster_clicked()" id="makeButton">Prompt Me!</button>
+            <br>
+            <h4 id="monsterDescription"></h4>
+            <img id="monsterImage">
+        </div>
+        
+        <script src="scripts/monsterMaker.js"></script>
+    </body>
+</html>
