@@ -80,9 +80,11 @@ aside{
     padding:5px;
     border-radius: 1em;
     left:0px;
-    height:50%; 
+    height:70%; 
     box-shadow: var(--bs);
     overflow-y: scroll;
+    border: thick;
+    border-color: var(--clr-accent3);
     
 }
 
@@ -97,7 +99,6 @@ li button {
     padding:2px;
     line-height: 0em;
     border:none;
-    font-size:10px;
     width:100%;
 }
 
@@ -116,14 +117,15 @@ li button:active{
     border-radius: 3em;
 }
 
+
 .faded-in{
     opacity:1;
-    transition: all 2s ease-in;
+    transition: all 1s ease-in;
 }
 
 .faded-out{
+    width:0;
     opacity:0;
-    transition: all 5s ease-in;
 }
 
 .productHeading{
