@@ -71,20 +71,26 @@ html {
     margin: 0.5em auto 1em;
 }
 
-
-aside{
+aside {
+    font-family: 'Montserrat Subrayada', serif;
     text-align: center;
-    position: fixed;
     background: var(--clr-accent4);
-    color:var(--clr-light);
+    color: var(--clr-light);
     padding:5px;
     border-radius: 1em;
     left:0px;
-    height:70%; 
     box-shadow: var(--bs);
+    height:70%;
+    text-align: center;
+    position: fixed;
+    
+}
+
+#productList{
+    border-radius: 5rem;
     overflow-y: scroll;
-    border: thick;
-    border-color: var(--clr-accent3);
+    height:80%; 
+    color:var(--clr-light);
     
 }
 
@@ -96,27 +102,29 @@ li button {
     background: var(--clr-accent2) ;
     color: var(--clr-dark);
     margin:0px;
-    padding:2px;
     line-height: 0em;
     border:none;
     width:100%;
 }
 
-li button:active{
-    background:var(--clr-accent4);
+li button:hover{
+    background:var(--clr-dark);
     color:var(--clr-light)
 }
 
 #output{
-    width:50%;
+    width:40%;
     align-items: center;
     text-align: center;
-    background: var(--clr-accent4);
-    color:var(--clr-light);
+    /*background: var(--clr-accent4);
+    */color:var(--clr-light);
     padding:10px;
     border-radius: 3em;
 }
 
+#main:nth-child(2){
+    background: var(--clr-accent1);
+}
 
 .faded-in{
     opacity:1;
@@ -137,16 +145,24 @@ li button:active{
 }
 
 #recipe button {
-    background: var(--clr-accent1);
-    color:var(--clr-dark);
+    background: var(--clr-accent3);
+    color:var(--clr-light);
     margin: 5px;
+    box-shadow: var(--bs);
+}
+
+#recipe button:hover{
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    box-shadow: none;
 }
 
 
-@media(max-width:835px){
+@media(max-width:940px){
     #output{
         width:80%;
         margin-top: 5px;
+        border: dashed;
     }
     aside{
         position: relative;
