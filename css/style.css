@@ -49,6 +49,8 @@ body {
     line-height:1.6;
 }
 
+
+
 section {
     padding: 5em 2em;
 }
@@ -56,6 +58,7 @@ section {
 img {
     display: block;
     max-width: 100%;
+    box-shadow: var(--bs);
 }
 
 strong { font-weight: var(--fw-bold)}
@@ -139,8 +142,9 @@ header {
     padding:1em;
 }
 
-.logo {
+#logo {
     max-width:100px;
+    box-shadow: none;
 }
 
 
