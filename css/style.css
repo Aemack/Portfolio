@@ -491,10 +491,16 @@ header {
     padding: 0 2em 2em;
     max-width: 1000px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .portfolio-item-individual p {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.portfolio-item-individual img {
+    width:45%;
+    margin: 0 auto;
 }
