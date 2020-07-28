@@ -12,13 +12,6 @@ navLinks.forEach(link => {
     })
 })
 
-function animate_gif(){
-    console.log("hi")
-    picture = document.getElementById("introPic")
-    picture.setAttribute("src", "img/ratsmile.gif")
-    picture.setAttribute("id","introPicAnim")
-    
-}
 
 function stop_gif(){
     picture = document.getElementById("introPicAnim")
@@ -26,5 +19,3 @@ function stop_gif(){
     
 
 }
-
-window.onscroll = function () {animate_gif()}
