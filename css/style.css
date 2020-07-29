@@ -411,6 +411,18 @@ header {
     text-align: center;
 }
 
+#icons{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 5rem;
+}
+
+
+@media(max-width:680px){
+    #icons{
+        display:none;
+    }
+}
 .section__subtitle--work {
     color: var(--clr-light);
 }
