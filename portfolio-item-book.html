@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Adam's Project</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="">
+        
+        <!-- Update with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+    
+    </head>
+    <body>
+        <header>
+            <div class="logo" >
+                <a  href="index.html"><img id="logo" src="img/logo.png" alt=""></a>
+            </div>
+
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About Me</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        
+        <!-- Introduction -->
+
+        <section class="intro" id="home">
+            <h1 class="section__title section__title--intro">
+                Writing<strong> Prompter</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro"><a href="https://github.com/Aemack/BookbyCover.git" target="blank" class="social-list__link"><i class="fab fa-github"></i></a></p>
+            <img id="introPicture" src="img/bbcthumb.png" alt="" class="intro__img">
+        </section>
+
+        <!-- Portfolio Item-->
+
+        <div class="portfolio-item-individual">
+            <p>This is a game where users compete to get the longest streak of matching book covers to their genres. The user clicks the genre they think matches, if correct they get a point, if wrong the score is checked against the highscore and the user is offered to start again.</p>
+            <img src="img/bbc.gif" alt="">
+            <p>This was made using <b>Node.js</b>, <b>Express.js</b> and <b>Puppeteer.js</b> for the back-end, collecting book covers from a publishing website under each genre. I implemented this as a full-stack app as I wanted to provide the ability to save highscores. For the front-end I used <b>fetch</b> requests to get and post data.</p>
+        </div>
+
+        <footer class="footer">
+
+            <a href="mailto:adam_mcgrane@msn.com" class="footer__link">adam_mcgrane@msn.com</a>
+            
+            <ul class="social-list">
+                
+                <li class="social-list__item"><a href="https://github.com/Aemack" class="social-list__link"><i class="fab fa-github"></i></a></li>
+                    
+                <li class="social-list__item"><a href="https://www.linkedin.com/in/adammcgrane/" class="social-list__link"><i class="fab fa-linkedin"></i></a></li>
+
+            </ul>
+        </footer>
+
+        <script src="js/index.js"></script>
+
+
+    </body>
+
+</html>
