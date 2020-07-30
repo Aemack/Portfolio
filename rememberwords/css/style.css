@@ -76,7 +76,7 @@ aside button:focus{
     color:var(--clr-light);
 }
 
-#instructions, #example {
+#instructions, #examplePoem {
     margin:0;
 } 
 
@@ -105,12 +105,7 @@ aside button:focus{
     width:400px;
 }
 
-#footer {
-    bottom:0;
-    height:5%;
-    width:100%;
-    background: var(--clr-accent4);
-}
+
 
 @media(max-width:500px){
     #aside{

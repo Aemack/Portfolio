@@ -19,7 +19,6 @@ function product_clicked(product){
         if(shouldRemove){
             element.remove();
         }
-        console.log(element.innerText)
         if(element.innerText.includes(product.replace("_"," ").toUpperCase())){
             shouldRemove = true;
         }
@@ -85,6 +84,24 @@ function get_details(product){
     //Format ["Description","ingredients"]
 
     switch (product){
+        case "starbulb":
+            return ["A beautiful gemstone, this prized product is the engorged, luminescent berry of the Star Bramble. The host plant requires lush conditions to thrive in the wild but can be farmed in all environments with the aid of a Hydroponic Tray."]
+            break;
+        case "poly_fibre":
+            return ["A connective fibre for electronics, made from an advanced synthetic polymer and capable of serving as a conduit for power and data.","cactus_flesh","starbulb"]
+            break;
+        case "heat_capacitor":
+            return ["A thermal regulator produced from refined organic material. It is unique in its ability to produce, dissipate and distribute heat as required.","frost_crystal","solanium"]
+            break;
+        case "frost_crystal":
+            return ["A beautiful blue crystal, this organic compound possesses both great hardiness and a shimmering translucence. It is harvested from the leaves of Frostwort. Frostwort requires frozen conditions to thrive in the wild, but can be farmed in all environments with the aid of a Hydroponics Tray"]
+            break;
+        case "solanium":
+            return ["A powerful chemical that has resisted attempts at synthesis. It can be harvested from the bark of the Solar Vine. The vine requires a hot climate to thrive in the wild, but can be farmed in all environments with the aid of a Hydroponics Tray."]
+            break;
+        case "circuit_board":
+            return ["Stackable, semi-flexible circuit board made from a highly durable synthetic polymer. Crafted from Heat Capacitors and Poly Fibre.","heat_capacitor","poly_fibre"]
+            break;
         case "fusion_ignitor":
             return ["Fusion Ignitor is a tradeable that can be crafted. The blueprint can be acquired from Manufacturing Facilites.","portable_reactor","quantum_processor","geodesite"]
             break;

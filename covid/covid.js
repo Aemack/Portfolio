@@ -189,10 +189,11 @@ function world_graph () {
     let myChart = document.getElementById("myChart").getContext("2d")
     pieChart = new Chart(myChart)
     
-    
+    most_deaths =[0]
     countryLabels = []
     countryDeaths =[]
     countryColors = []
+    console.log(data.Global.TotalDeaths)
     data.Countries.forEach(country =>{
         countryLabels.push(country.Country)
         countryDeaths.push(country.TotalDeaths)
@@ -200,10 +201,27 @@ function world_graph () {
         rand2 = Math.floor(Math.random()*255)
         rand3 = Math.floor(Math.random()*255)
         countryColors.push(`rgba(${rand1},${rand2},${rand3})`)
+        if (country.TotalDeaths > most_deaths[0]){
+            most_deaths[0] = country.TotalDeaths
+            most_deaths[1] = country.Country
+        }
     })
+    percOfDead = (most_deaths[0]/data.Global.TotalDeaths *100).toFixed(2)
+    console.log(percOfDead)
+    
+    
+    output = document.getElementById("output")
+    most_dead_elm = document.createElement("h4")
+    most_dead_elm.setAttribute("class","output")
+    most_dead_elm.innerText = `${most_deaths[1]} has the most deaths at  ${most_deaths[0]}.`
+    perc_elem = document.createElement("h4")
+    perc_elem.setAttribute("class","output")
+    perc_elem.innerText = `This is ${percOfDead}% of the ${data.Global.TotalDeaths} global deaths.`
+    output.appendChild(most_dead_elm)
+    output.appendChild(perc_elem)
     
     pieChart = new Chart(myChart, {
-        type:'horizontalBar',
+        type:'pie',
         data:{
             labels:countryLabels,
             datasets:[{
@@ -214,8 +232,11 @@ function world_graph () {
             }],
         },
         options:{
+            legend: {
+                display: false
+             },
             responsive:true,
-            maintainAspectRatio:false,
+            maintainAspectRatio:true,
             scales:{
                 yAxes:[{
                     ticks: {
@@ -227,7 +248,7 @@ function world_graph () {
         }            
     }); 
     chartElement = document.getElementById("container")
-    chartElement.style.height="1500px"   
+    chartElement.style.height="1000px"   
 })
 
 }
@@ -257,7 +278,6 @@ function create_select(){
     .then(function (resp) { return resp.json() })
     .then(function (data){
         data.Countries.forEach(country=>{
-            console.log(data)
             newOption = document.createElement("option")
             newOption.setAttribute("value",country.Slug)
             newOption.setAttribute("class","subnav")
@@ -295,7 +315,6 @@ function create_other_range(){
     .then(function (resp) { return resp.json() })
     .then(function (data){
         data.Countries.forEach(country=>{
-            console.log(data)
             newOption = document.createElement("option")
             newOption.setAttribute("value",country.Slug)
             newOption.setAttribute("class","subnav")
@@ -321,7 +340,6 @@ function create_range(){
     fetch(`https://api.covid19api.com/total/dayone/country/${selectedCountry}`)
     .then(function(resp) {return resp.json() })
     .then(function(data) { 
-        console.log(data)
         oldRange = document.getElementById("date")
         if (oldRange){
             oldRange.remove()
@@ -396,7 +414,7 @@ function make_day_graph(){
     .then(function(data) {
         
         datePosition = document.getElementById("date").value
-        chartNumbers = [data[datePosition].Active,data[datePosition].Deaths]
+        chartNumbers = [data[datePosition].Recovered,data[datePosition].Deaths]
         
         
         output = document.getElementById("output")
@@ -406,6 +424,7 @@ function make_day_graph(){
         dateElement.setAttribute("class","output")
         dateElement.innerHTML = date
         output.append(dateElement)
+        console.log(data[datePosition])
 
         daysSinceOutbreak = document.getElementById("date").value
         daysSince = document.createElement("h5")
@@ -414,7 +433,7 @@ function make_day_graph(){
 
         activeElement = document.createElement("h3")
         activeElement.setAttribute("class","output")
-        activeElement.innerHTML = `Active: ${data[datePosition].Active}`
+        activeElement.innerHTML = `Recovered: ${data[datePosition].Recovered}`
 
         deathsElement = document.createElement("h4")
         deathsElement.setAttribute("class","output")
@@ -430,7 +449,7 @@ function make_day_graph(){
         pieChart = new Chart(myChart, {
             type:'doughnut',
             data:{
-                labels:["Active","Deaths"],
+                labels:["Recovered","Deaths"],
                 datasets:[{
                     label: "Deaths",
                     data: chartNumbers,
