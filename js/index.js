@@ -1,3 +1,5 @@
+const { NONAME } = require("dns");
+
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelectorAll('.nav__link')
 
@@ -11,11 +13,3 @@ navLinks.forEach(link => {
         document.body.classList.remove('nav-open');
     })
 })
-
-
-function stop_gif(){
-    picture = document.getElementById("introPicAnim")
-    picture.setAttribute("src","img/introPicture.jpg")
-    
-
-}
