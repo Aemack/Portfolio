@@ -139,11 +139,13 @@ h3 {font-size: var(--fs-h3);}
 header {
     display: flex;
     justify-content: space-between;
+    margin: auto;
     padding:1em;
+    background: var(--clr-dark);
 }
 
 #logo {
-    max-width:100px;
+    max-width:40px;
     box-shadow: none;
 }
 
@@ -186,7 +188,7 @@ header {
 }
 
 .nav-toggle {
-    padding:.5em;
+    padding:15px;
     background: transparent;
     border: 0;
     cursor:pointer;
@@ -211,7 +213,7 @@ header {
 }
 
 .nav-open .hamburger::before {
-    transform: rotate(90deg) translateX(-6px);
+    transform: rotate(90deg) translateX(-8px);
 }
 
 .nav-open .hamburger::after{
@@ -244,9 +246,9 @@ header {
     right: 0;
 }
 
-.hamburger::before {top: 6px;}
+.hamburger::before {top: 10px;}
 
-.hamburger::after{ bottom: 6px;}
+.hamburger::after{ bottom: 10px;}
 
 
 
