@@ -413,15 +413,20 @@ header {
     text-align: center;
 }
 
-#icons{
+.work-label{
+    margin:10px
+}
+
+.icons{
     display: flex;
     justify-content: space-evenly;
     font-size: 5rem;
+    margin:10px;
 }
 
 
 @media(max-width:680px){
-    #icons{
+    .icons{
         display:none;
     }
 }
