@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Android Spotlist</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="">
+
+        <!-- Update with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="img/logo.png" alt=""></a>
+            </div>
+
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About Me</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <!-- Introduction -->
+
+        <section class="intro" id="home">
+            <h1 class="section__title section__title--intro">
+                Android <strong>Spotlisty</strong>
+            </h1>
+            <p class="d-flex section__subtitle section__subtitle--intro"><a href="https://play.google.com/store/apps/details?id=com.devmc.spotlisty" target="blank"><i class="fab fa-google-play"></i></a><a href="https://github.com/Aemack/Android-Spotlisty-App-V2.git"><i class="fab fa-github"></i></a></p>
+            <img id="introPicture" src="img/spotlist-androidThumb.jpg" alt="" class="intro__img">
+        </section>
+
+        <!-- Portfolio Item-->
+
+        <div class="portfolio-item-individual">
+            
+            <p> An android app that allows users to sign in to their Spotify accounts and generate playlists based on their recently played, genre or off of another playlist.</p>
+            <div class="mobile-images">
+                <img src="img/spotlist-android5.jpg" alt="" class="intro__img">
+                <img src="img/spotlist-android2.jpg" alt="" class="intro__img">
+            </div>
+            <p>This was made using Android Studio and Java. Along with using the Spotify SDK for authorisations and the Web API to make Volley requests. </p>
+            <div class="mobile-images">    
+                <img src="img/spotlist-android3.jpg" alt="" class="intro__img">
+                <img src="img/spotlist-android4.jpg" alt="" class="intro__img">
+            </div>
+            </div>
+
+        <footer class="footer">
+
+            <a href="mailto:adam@devmc.co.uk" class="footer__link">adam@devmc.co.uk</a>
+
+            <ul class="social-list">
+
+                <li class="social-list__item"><a href="https://github.com/Aemack" class="social-list__link"><i class="fab fa-github"></i></a></li>
+
+                <li class="social-list__item"><a href="https://www.linkedin.com/in/adammcgrane/" class="social-list__link"><i class="fab fa-linkedin"></i></a></li>
+
+            </ul>
+        </footer>
+
+        <script src="js/index.js"></script>
+
+
+    </body>
+
+</html>

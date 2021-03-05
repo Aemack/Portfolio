@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spotlisty</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="">
+
+        <!-- Update with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="img/logo.png" alt=""></a>
+            </div>
+
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About Me</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <!-- Introduction -->
+
+        <section class="intro" id="home">
+            <h1 class="section__title section__title--intro">
+                Spotify playlist generator <strong>Spotlisty</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro"><a target='blank' href="https://spotlisty.herokuapp.com/">Check it out!</a></p>
+            <img id="introPicture" src="img/spotlistThumb.png" alt="" class="intro__img">
+        </section>
+
+        <!-- Portfolio Item-->
+
+        <div class="portfolio-item-individual">
+            <p>The user is prompted to log in to spotify so it can access the Spotify API with the access key. Using the key throughout the app they are able to generate playlists based on various seeds </p>
+            <img src="img/spotlistgif.gif" alt="">
+            <p>I made this <b>Python</b>, <b>Django</b>, <b>HTML</b>, <b>CSS</b>, <b>jQuery</b>, <b>Bootstrap</b> and the Spotify <b>API</b> </p>
+            <img src="img/spotlistgif2.gif" alt="">
+
+        </div>
+
+        <footer class="footer">
+
+            <a href="mailto:adam@devmc.co.uk" class="footer__link">adam@devmc.co.uk</a>
+
+            <ul class="social-list">
+
+                <li class="social-list__item"><a href="https://github.com/Aemack" class="social-list__link"><i class="fab fa-github"></i></a></li>
+
+                <li class="social-list__item"><a href="https://www.linkedin.com/in/adammcgrane/" class="social-list__link"><i class="fab fa-linkedin"></i></a></li>
+
+            </ul>
+        </footer>
+
+        <script src="js/index.js"></script>
+
+
+    </body>
+
+</html>
